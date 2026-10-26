@@ -1,12 +1,30 @@
-# Portfolio — Kevin Dhanjay
+# Portfolio 2026 — Kevidu Kussiyage
 
-Site statique présentant une sélection de projets à l’intersection de l’ingénierie, du design et des usages numériques.
+Portfolio statique : ingénierie, design et usages.
 
-## Avant publication
+## Publication
 
-1. Relisez les études de cas et, pour chaque projet, confirmez le contexte, le rôle, les outils, la période et les résultats que vous pouvez rendre publics.
-2. Remplacez le PDF dans `assets/cv-kevidu-kussiyage.pdf` lorsque vous mettez votre CV à jour.
+Le site est publié sur https://k-dhanj.github.io/Portfolio-2026/ depuis la branche
+`main`, dossier racine. `.nojekyll` permet de servir directement les fichiers.
 
-## Déploiement GitHub Pages
+## Fichiers
 
-Le site ne nécessite aucune installation ni étape de compilation. Sur GitHub : **Settings → Pages → Build and deployment → Deploy from a branch**, puis sélectionnez la branche `main` et le dossier `/(root)`. Après publication, vérifiez l’accueil, les cinq études de cas principales et les coordonnées depuis un téléphone.
+- `index.html` : structure commune, navigation et dialogue d’agrandissement.
+- `style.css` : charte sombre, verre, responsive et préférences de mouvement.
+- `app.js` : navigation, cartes interactives et affichage des études de cas.
+- `content.js` : textes et médias issus des 19 pages du portfolio précédent.
+- `assets/` : CV, images, vidéos et documents disponibles.
+- `pages/` : redirections des anciennes adresses vers les nouvelles études.
+
+Les fichiers de présentation contiennent des commentaires explicatifs.
+Les versions précédentes restent récupérables dans l’historique Git.
+
+## Aperçu local
+
+Lancer `python -m http.server 4175` dans ce dossier puis ouvrir
+http://127.0.0.1:4175/.
+
+## Médias absents des sources initiales
+
+`3d/video.avi`, `After/ExoVélo.mp4`, `Numix/Numix Portfolio.mp4`,
+`poster/affiches.pdf` restent à fournir.
