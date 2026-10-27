@@ -56,11 +56,16 @@ function detail(view,id) {
   // Le démonstrateur utilise le même thème que le projet et vit dans cette vue.
   if(id==='jeudelavie'){const demo=node('section','life-root');demo.setAttribute('aria-label','Jeu de la vie interactif');view.append(demo);}
   const layout=node('div','case-layout'); const toc=node('nav','case-index'); toc.setAttribute('aria-label','Sommaire du projet'); const body=node('article','case-body'); let sections=0, mediaIndex=0;
+  // Une même figure gère les légendes, les images isolées et les galeries.
+  function mediaFigure(item){const fig=node('figure','reveal');const img=image(item.src,item.alt||p.title+' — visuel '+(++mediaIndex));img.tabIndex=0;img.setAttribute('role','button');img.setAttribute('aria-label','Agrandir : '+img.alt);img.dataset.enlarge='true';fig.append(img);if(item.caption)fig.append(node('figcaption','',item.caption));return fig;}
   p.blocks.forEach(block=>{
     if(block.type==='text'){body.append(node('p','',block.text));}
-    if(block.type==='heading'){const h=heading(block.text); h.id='section-'+sections++; body.append(h); if(sections<7){const a=link(block.text,`#project/${id}`);a.addEventListener('click',e=>{e.preventDefault();h.scrollIntoView({behavior:reduced.matches?'instant':'smooth'});});toc.append(a);}}
-    if(block.type==='image'){const fig=node('figure','reveal'); const img=image(block.src,p.title+' — visuel '+(++mediaIndex)); img.tabIndex=0; img.setAttribute('role','button'); img.setAttribute('aria-label','Agrandir le visuel '+mediaIndex); img.dataset.enlarge='true';fig.append(img);body.append(fig);}
-    if(block.type==='video'){const fig=node('figure','reveal'); const video=node('video'); video.src=block.src;video.controls=true;video.playsInline=true;video.preload='metadata'; fig.append(video);body.append(fig);}
+    if(block.type==='heading'){const h=heading(block.text); h.id='section-'+sections++; body.append(h); if(sections<8){const a=link(block.text,`#project/${id}`);a.addEventListener('click',e=>{e.preventDefault();h.scrollIntoView({behavior:reduced.matches?'instant':'smooth'});});toc.append(a);}}
+    if(block.type==='image')body.append(mediaFigure(block));
+    if(block.type==='gallery'){const gallery=node('div','case-gallery'+(block.variant==='phone'?' case-gallery--phone':''));block.items.forEach(item=>gallery.append(mediaFigure(item)));body.append(gallery);}
+    if(block.type==='flow'){const flow=node('ol','case-flow');flow.setAttribute('aria-label','Fonctionnement du système');block.items.forEach(item=>{const step=node('li');step.append(node('strong','',item.title),node('span','',item.text));flow.append(step);});body.append(flow);}
+    if(block.type==='video'){const fig=node('figure','reveal'); const video=node('video'); video.src=block.src;video.controls=true;video.playsInline=true;video.preload='metadata';if(block.caption)video.setAttribute('aria-label',block.caption);fig.append(video);if(block.caption)fig.append(node('figcaption','',block.caption));body.append(fig);}
+    if(block.type==='link'){const a=link(block.text,block.href,'document');a.target='_blank';a.rel='noopener noreferrer';body.append(a);}
     if(block.type==='document'){const a=link('Consulter le document ↗',block.src,'document');a.target='_blank';a.rel='noopener';body.append(a);}
   });
   if(!p.blocks.length)body.append(node('p','empty','Les éléments de ce projet ne sont pas disponibles dans les fichiers du portfolio source.'));
@@ -74,6 +79,8 @@ let route='';
 let disposeView=()=>{};
 function render(){
   const hash=decodeURIComponent(location.hash.slice(1)||'work');
+  // Les liens déjà partagés vers PetApp ouvrent le projet qui le remplace.
+  if(hash==='project/petapp'){location.replace('#project/surveillance');return;}
   if(hash==='selected'||hash==='main'||hash.startsWith('section-'))return;
   if(route===hash)return;disposeView();disposeView=()=>{};route=hash;document.title='Kevidu Kussiyage — Ingénierie & Design';
   const view=node('div','view'); if(hash==='info')info(view);else if(hash.startsWith('project/'))detail(view,hash.slice(8));else work(view);

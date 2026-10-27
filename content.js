@@ -769,12 +769,53 @@ window.PORTFOLIO = [
     ]
   },
   {
-    "id": "petapp",
-    "title": "PetApp",
+    "id": "surveillance",
+    "title": "Système de surveillance",
     "category": "Informatique",
-    "summary": "",
-    "cover": null,
-    "blocks": []
+    "summary": "Safeplace : un prototype de surveillance domestique qui relie capteurs, caméras, robot mobile et interfaces de supervision.",
+    "cover": "assets/surveillance/prototype.jpg",
+    "blocks": [
+      { "type": "heading", "text": "Le projet" },
+      { "type": "text", "text": "Comment passer d’une détection dans un logement à une information compréhensible et à une action à distance ? Réalisé en équipe au sein du groupe 4 de l’atelier MAISON — Modélisation, Architecture et Intégration pour Systèmes d’Objets Numériques —, ce projet associe un dispositif physique et une application web de supervision. L’enjeu est de faire communiquer toute la chaîne : détecter, transmettre, consulter et qualifier une alerte." },
+      { "type": "text", "text": "Le groupe réunit Kevidu Kussiyage, Sara Baassou, Maiwenne Beddar, Mariam Tounkara et Lyna Ouiddi. La présentation ci-dessous porte sur le travail collectif et le prototype présenté en atelier." },
+      { "type": "heading", "text": "Ma contribution : le robot embarqué" },
+      { "type": "text", "text": "J’ai pris en charge la partie robot embarqué : l’intégration du prototype mobile, sa caméra et son articulation avec le système de supervision. Ce travail se situe à la rencontre du matériel, du logiciel embarqué et des échanges réseau, dans le cadre de la réalisation collective du groupe 4." },
+      { "type": "heading", "text": "Du capteur à l’interface" },
+      { "type": "text", "text": "Le prototype combine une caméra fixe, un Arduino avec bouton et photorésistance, une LED et un robot doté d’une caméra embarquée. Les Raspberry Pi et le serveur central communiquent sur un réseau Ethernet local. Le serveur reçoit les événements, les conserve dans une base de données et transmet les décisions prises depuis l’interface." },
+      { "type": "flow", "items": [
+        { "title": "Détecter", "text": "Caméra fixe, bouton et photorésistance" },
+        { "title": "Centraliser", "text": "Réseau local → serveur FastAPI → SQLite" },
+        { "title": "Vérifier", "text": "Interfaces web, images et caméra mobile" },
+        { "title": "Répondre", "text": "Qualification de l’alerte et retour au dispositif" }
+      ] },
+      { "type": "gallery", "items": [
+        { "src": "assets/surveillance/assemblage.jpg", "alt": "Intérieur du robot montrant la carte Raspberry Pi, la caméra et le câblage", "caption": "Intégration du Raspberry Pi et de la caméra sur le châssis mobile." },
+        { "src": "assets/surveillance/capteurs.jpg", "alt": "Montage de l’Arduino, de la photorésistance et du bouton sur une plaque d’essai reliée au Raspberry Pi", "caption": "Montage de test : acquisition des signaux et communication avec le système." }
+      ] },
+      { "type": "video", "src": "assets/surveillance/demonstration.mp4", "caption": "Vidéo du prototype réalisée pendant les essais." },
+      { "type": "heading", "text": "Deux espaces, deux usages" },
+      { "type": "text", "text": "L’interface Safeplace distingue l’espace du particulier et le centre de surveillance. Ce choix adapte la quantité d’information et les actions proposées à chaque usage : vérifier son logement d’un côté, superviser des installations et suivre les événements de l’autre." },
+      { "type": "image", "src": "assets/surveillance/accueil-espaces.jpg", "alt": "Page d’accueil Safeplace avec accès à l’espace particulier et au centre de surveillance", "caption": "Entrée du prototype : deux parcours identifiés dès l’accueil." },
+      { "type": "heading", "text": "Côté utilisateur" },
+      { "type": "text", "text": "Le particulier retrouve l’état de son installation, les alertes, les équipements et les captures depuis une interface adaptée au mobile. L’écran du robot rassemble le retour vidéo et les commandes de déplacement. Les captures peuvent être consultées et conservées ; les statistiques donnent une lecture de l’activité. Les états de connexion, de désactivation et d’erreur restent visibles pour ne pas confondre une absence d’alerte avec un équipement indisponible." },
+      { "type": "gallery", "variant": "phone", "items": [
+        { "src": "assets/surveillance/utilisateur-tableau-de-bord.jpg", "alt": "Tableau de bord mobile affichant l’état de protection, les mouvements et la disponibilité des équipements", "caption": "Vue d’ensemble : état du logement, accès rapides et informations de connexion." },
+        { "src": "assets/surveillance/utilisateur-robot.jpg", "alt": "Écran mobile de pilotage du robot avec commandes directionnelles et état du flux vidéo", "caption": "Caméra mobile : retour vidéo et commandes réunis sur un écran." },
+        { "src": "assets/surveillance/utilisateur-alertes.jpg", "alt": "Écran des alertes de sécurité sans alerte active", "caption": "Alertes : rendre l’état de surveillance immédiatement lisible." },
+        { "src": "assets/surveillance/utilisateur-captures.jpg", "alt": "Bibliothèque mobile des captures avec une image sauvegardée", "caption": "Captures : consulter et conserver les images utiles." },
+        { "src": "assets/surveillance/utilisateur-equipements.jpg", "alt": "Liste des équipements distinguant la caméra fixe, les capteurs et le robot mobile", "caption": "Équipements : distinguer activation, connexion et disponibilité." },
+        { "src": "assets/surveillance/utilisateur-statistiques.jpg", "alt": "Statistiques de surveillance avec graphique des mouvements et des alertes", "caption": "Statistiques : relire l’activité sur une période choisie." }
+      ] },
+      { "type": "heading", "text": "Côté administrateur" },
+      { "type": "text", "text": "Le centre de surveillance propose une lecture plus détaillée : suivi des clients et des alertes, support, infrastructure et journal d’audit. Les filtres et les statuts aident à retrouver un événement et à suivre les actions effectuées. Les captures documentent l’interface de démonstration ; elles montrent aussi les états transitoires d’un prototype en cours d’intégration." },
+      { "type": "image", "src": "assets/surveillance/admin-audit.jpg", "alt": "Centre de surveillance affichant le journal d’audit et ses filtres par catégorie, acteur et ressource", "caption": "Journal d’audit : rendre les actions et événements consultables." },
+      { "type": "image", "src": "assets/surveillance/admin-support.jpg", "alt": "Espace administrateur présentant la liste des tickets de support et leurs filtres", "caption": "Support : organiser les demandes et leur suivi." },
+      { "type": "heading", "text": "Choix techniques & bilan" },
+      { "type": "text", "text": "Le dépôt partagé documente une acquisition et un traitement d’image en C++ avec OpenCV sur Raspberry Pi, des programmes Arduino pour les capteurs, un serveur Python/FastAPI et une base SQLite. Une première interface HTML, CSS et JavaScript y décrit le traitement des alertes. Les captures présentent l’interface Safeplace utilisée pour la démonstration ; toutes ses évolutions ne sont pas nécessairement présentes dans cette version du dépôt." },
+      { "type": "text", "text": "Le retour d’atelier du groupe 4 souligne la circulation de l’information de bout en bout, le fonctionnement de la caméra et la lisibilité de l’interface de maintenance. Les améliorations identifiées portent sur la modularité du code, l’association précise des acquittements aux événements et une meilleure utilisation de la LED. La réalisation s’est appuyée en partie sur une assistance IA, dont ce retour rappelle l’importance de relire et structurer le code." },
+      { "type": "text", "text": "Il s’agit d’un prototype pédagogique sur réseau local : l’authentification reste à mettre en place avant un usage réel. Dans la version du dépôt consultée, la route de commande du robot reste à raccorder au pilotage matériel. Le passage à une connexion sans fil, une base dans le cloud et une application mobile native sont des perspectives, pas des fonctionnalités livrées. Source du bilan : compte rendu de l’atelier MAISON 2026–2027, groupe 4, pages 2 à 4." },
+      { "type": "link", "text": "Consulter le code du projet sur GitHub ↗", "href": "https://github.com/baassousouira/Atelier_MAISON" }
+    ]
   },
   {
     "id": "2048",
