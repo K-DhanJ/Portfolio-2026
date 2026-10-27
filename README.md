@@ -13,6 +13,7 @@ Le site est publié sur https://k-dhanj.github.io/Portfolio-2026/ depuis la bran
 - `style.css` : charte sombre, verre, responsive et préférences de mouvement.
 - `app.js` : navigation, cartes interactives et affichage des études de cas.
 - `content.js` : textes et médias issus des 19 pages du portfolio précédent.
+- `life.js` et `life.css` : Jeu de la vie interactif intégré au projet informatique.
 - `assets/` : CV, images, vidéos et documents disponibles.
 - `pages/` : redirections des anciennes adresses vers les nouvelles études.
 
@@ -23,6 +24,8 @@ Les versions précédentes restent récupérables dans l’historique Git.
 
 Lancer `python -m http.server 4175` dans ce dossier puis ouvrir
 http://127.0.0.1:4175/.
+
+Vérifier les règles du Jeu de la vie avec `node tests/life.test.cjs`.
 
 ## Médias absents des sources initiales
 

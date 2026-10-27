@@ -53,6 +53,8 @@ function detail(view,id) {
   document.title=p.title+' — Kevidu Kussiyage';
   const top=node('section','case-top'); top.append(link('← Tous les projets','#work','back'),node('p','label',p.category),heading(p.title,1)); if(p.summary) top.append(node('p','summary',p.summary)); view.append(top);
   if(p.cover){ const cover=image(p.cover,p.title); cover.className='case-cover'; cover.loading='eager'; view.append(cover); }
+  // Le démonstrateur utilise le même thème que le projet et vit dans cette vue.
+  if(id==='jeudelavie'){const demo=node('section','life-root');demo.setAttribute('aria-label','Jeu de la vie interactif');view.append(demo);}
   const layout=node('div','case-layout'); const toc=node('nav','case-index'); toc.setAttribute('aria-label','Sommaire du projet'); const body=node('article','case-body'); let sections=0, mediaIndex=0;
   p.blocks.forEach(block=>{
     if(block.type==='text'){body.append(node('p','',block.text));}
@@ -69,12 +71,14 @@ function detail(view,id) {
 /* Navigation par fragment : fonctionne sur un hébergement statique, avec
    historique et liens directs vers chacune des dix-neuf études de cas. */
 let route='';
+let disposeView=()=>{};
 function render(){
   const hash=decodeURIComponent(location.hash.slice(1)||'work');
   if(hash==='selected'||hash==='main'||hash.startsWith('section-'))return;
-  if(route===hash)return;route=hash;document.title='Kevidu Kussiyage — Ingénierie & Design';
+  if(route===hash)return;disposeView();disposeView=()=>{};route=hash;document.title='Kevidu Kussiyage — Ingénierie & Design';
   const view=node('div','view'); if(hash==='info')info(view);else if(hash.startsWith('project/'))detail(view,hash.slice(8));else work(view);
   main.replaceChildren(view); document.querySelectorAll('[data-nav]').forEach(a=>{const active=a.dataset.nav===(hash==='info'?'info':'work');a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  const lifeRoot=view.querySelector('.life-root');if(lifeRoot)disposeView=window.GameOfLife.mount(lifeRoot);
   window.scrollTo({top:0,behavior:'instant'});setupInteractions();
 }
 window.addEventListener('hashchange',render);render();

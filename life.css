@@ -1,0 +1,17 @@
+/* Démonstrateur intégré : mêmes teintes et bordures que les panneaux du site. */
+.life-root{padding:28px;margin:0 0 55px;border:1px solid #ffffff22;border-radius:20px;background:linear-gradient(135deg,#252529,#151515)}
+.life-root h2{margin:0 0 10px;font-size:30px;font-weight:500;letter-spacing:-1px}
+.life-help{color:#aaa;font-size:13px;line-height:1.6;margin:10px 0 18px}
+.life-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.life-button{min-height:44px;padding:10px 18px;border:1px solid #ffffff25;border-radius:99px;background:#ffffff08;font-size:14px}
+.life-button:hover{background:#ffffff18}.life-button.primary{color:#14141a;background:#c2caff;border-color:#c2caff;min-width:120px}.life-button.primary:hover{background:#d5daff}
+.life-options{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:25px;margin-bottom:22px}
+.life-options label{display:flex;flex-direction:column;gap:9px;font-size:13px;color:#bbb}
+.life-options select{font:inherit;background:#1d1d21;color:#eee;border:1px solid #ffffff30;border-radius:9px;min-height:40px;padding:8px 12px;width:100%}
+.life-options input{accent-color:#c2caff;width:100%;min-height:25px;margin:0}.life-options output{font-size:12px;color:#aaa}
+/* touch-action ne bloque le défilement que sur la surface de dessin. */
+.life-canvas{display:block;width:100%;height:auto;border:1px solid #ffffff28;border-radius:10px;touch-action:none;cursor:crosshair}
+.life-canvas:focus-visible,.life-options select:focus-visible,.life-options input:focus-visible{outline:2px solid #c2caff;outline-offset:4px}
+.life-stats{font-size:13px;font-variant-numeric:tabular-nums;color:#d0d0df;margin:14px 0 5px}.life-status{color:#aaa;font-size:12px;min-height:1.5em;margin:0 0 15px}
+.life-rules{font-size:13px;border-top:1px solid #ffffff18;padding-top:15px}.life-rules summary{cursor:pointer}.life-rules p{color:#aaa;line-height:1.7}
+@media(max-width:650px){.life-root{padding:16px;border-radius:16px}.life-root h2{font-size:25px}.life-toolbar{gap:7px}.life-button{padding:9px 12px;font-size:12px}.life-options{grid-template-columns:1fr;gap:16px}.life-help{font-size:12px}}
