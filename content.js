@@ -710,9 +710,50 @@ window.PORTFOLIO = [
     "id": "portfolio",
     "title": "Portfolio",
     "category": "Informatique",
-    "summary": "",
+    "summary": "Un site pour relier ingénierie, design et usages — de la présentation des projets à la conception de l’interface.",
     "cover": null,
-    "blocks": []
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "L’intention"
+      },
+      {
+        "type": "text",
+        "text": "Ce portfolio rassemble mes projets de design et d’informatique dans un même espace. L’objectif : permettre de comprendre rapidement mon profil ingénieur·designer, puis d’explorer chaque démarche à travers ses textes, visuels et vidéos. Le CV et les liens de contact restent accessibles pour faciliter un premier échange."
+      },
+      {
+        "type": "heading",
+        "text": "HTML, CSS & JavaScript"
+      },
+      {
+        "type": "text",
+        "text": "Le site est développé sans framework : HTML pour la structure, CSS pour la mise en page responsive et les effets visuels, JavaScript natif pour la navigation et les interactions. Les contenus sont séparés de leur affichage dans un fichier de données, ce qui permet d’ajouter ou de modifier un projet sans reconstruire toute la page. Le code est commenté, versionné sur GitHub et publié avec GitHub Pages."
+      },
+      {
+        "type": "heading",
+        "text": "Les partis pris graphiques"
+      },
+      {
+        "type": "text",
+        "text": "Une direction artistique sombre, inspirée du portfolio de Perry Wang, met l’accent sur les réalisations. Les panneaux vitrés, les contours lumineux et la fenêtre de navigateur de l’accueil donnent une identité commune au site. La typographie et les espaces hiérarchisent l’information : une sélection de cinq projets ouvre la visite, suivie des explorations créatives et techniques."
+      },
+      {
+        "type": "heading",
+        "text": "Des interactions au service de la visite"
+      },
+      {
+        "type": "text",
+        "text": "Les cartes réagissent au survol par un reflet et une légère inclinaison. Les éléments apparaissent au défilement, tandis que la navigation flottante relie projets et profil. Dans les études de cas, un sommaire facilite la lecture et les images s’agrandissent au clic. Chaque projet possède une adresse directe, partageable sans passer par l’accueil."
+      },
+      {
+        "type": "heading",
+        "text": "L’attention aux usages"
+      },
+      {
+        "type": "text",
+        "text": "La mise en page s’adapte du bureau au mobile. Les liens et l’agrandissement des images sont utilisables au clavier ; les vidéos disposent de commandes de lecture. Les animations se désactivent lorsque le visiteur préfère réduire les mouvements. Les images sont chargées progressivement afin d’éviter de télécharger tous les visuels dès l’ouverture."
+      }
+    ]
   },
   {
     "id": "jeudelavie",
