@@ -55,6 +55,9 @@ function detail(view,id) {
   if(p.cover){ const cover=image(p.cover,p.title); cover.className='case-cover'; cover.loading='eager'; view.append(cover); }
   // Le démonstrateur utilise le même thème que le projet et vit dans cette vue.
   if(id==='jeudelavie'){const demo=node('section','life-root');demo.setAttribute('aria-label','Jeu de la vie interactif');view.append(demo);}
+  // Une iframe isole l’exécution Python : elle se charge seulement pour 2048
+  // et son contexte est automatiquement détruit quand le visiteur quitte la vue.
+  if(id==='2048'){const demo=node('section','python-demo');const frame=node('iframe','python-game-frame');frame.src='games/2048/index.html';frame.title='Jeu 2048 interactif codé en Python';frame.loading='lazy';demo.append(frame);view.append(demo);}
   const layout=node('div','case-layout'); const toc=node('nav','case-index'); toc.setAttribute('aria-label','Sommaire du projet'); const body=node('article','case-body'); let sections=0, mediaIndex=0;
   // Une même figure gère les légendes, les images isolées et les galeries.
   function mediaFigure(item){const fig=node('figure','reveal');const img=image(item.src,item.alt||p.title+' — visuel '+(++mediaIndex));img.tabIndex=0;img.setAttribute('role','button');img.setAttribute('aria-label','Agrandir : '+img.alt);img.dataset.enlarge='true';fig.append(img);if(item.caption)fig.append(node('figcaption','',item.caption));return fig;}

@@ -821,9 +821,17 @@ window.PORTFOLIO = [
     "id": "2048",
     "title": "2048",
     "category": "Informatique",
-    "summary": "",
+    "summary": "Un jeu de logique en Python : déplacer, fusionner et anticiper pour atteindre la tuile 2048.",
     "cover": null,
-    "blocks": []
+    "blocks": [
+      { "type": "heading", "text": "Le principe" },
+      { "type": "text", "text": "Sur une grille 4 × 4, chaque mouvement fait glisser toutes les tuiles dans une direction. Deux valeurs identiques se réunissent pour former leur double. L’objectif est d’atteindre 2048 sans bloquer la grille." },
+      { "type": "heading", "text": "Comment fonctionne le code Python ?" },
+      { "type": "text", "text": "La grille est une liste de listes ; un zéro représente une case vide. La fonction merge_line retire les zéros, fusionne les paires voisines une seule fois, puis complète la ligne. La même fonction traite les quatre directions en inversant les lignes ou en lisant les colonnes. Après un déplacement valide, le programme ajoute une tuile 2 ou 4 et actualise le score." },
+      { "type": "heading", "text": "Du Python dans la page" },
+      { "type": "text", "text": "Le moteur de règles (engine.py) est séparé de l’interface (game.py). Brython exécute ces deux fichiers Python dans le navigateur, tandis que HTML et CSS présentent la grille et les contrôles. Le jeu fonctionne sur GitHub Pages sans serveur Python. Les règles de fusion, le score et la fin de partie sont vérifiés par des tests Python indépendants de l’affichage." },
+      { "type": "link", "text": "Voir le code Python du moteur ↗", "href": "games/2048/engine.py" }
+    ]
   },
   {
     "id": "ia",
