@@ -18,29 +18,31 @@
   }
 
   function mount(root) {
+    const en=window.portfolioLanguage==='en';
+    const t=(fr,english)=>en?english:fr;
     const cols=50, rows=25, cell=16;
     let grid=new Uint8Array(cols*rows), generation=0, timer=null;
     let selection={x:24,y:12}, drawing=false, paintValue=1, lastCell=-1;
     const el=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls||'';if(text)n.textContent=text;return n;};
-    const title=el('h2','','À vous de jouer.');title.id='life-title';root.setAttribute('aria-labelledby',title.id);
-    const help=el('p','life-help','Dessinez des cellules sur la grille, choisissez un motif, puis lancez la simulation.');
+    const title=el('h2','',t('À vous de jouer.','Your turn to play.'));title.id='life-title';root.setAttribute('aria-labelledby',title.id);
+    const help=el('p','life-help',t('Dessinez des cellules sur la grille, choisissez un motif, puis lancez la simulation.','Draw cells on the grid, choose a pattern, then start the simulation.'));
     const toolbar=el('div','life-toolbar');
     function button(label,action,primary=false){const b=el('button',primary?'life-button primary':'life-button',label);b.type='button';b.addEventListener('click',action);return b;}
-    const play=button('Démarrer',()=>timer?pause():start(),true);play.setAttribute('aria-pressed','false');
-    const step=button('Un pas',()=>{pause();advance();});
-    const random=button('Aléatoire',()=>{pause();generation=0;grid=Uint8Array.from(grid,()=>Math.random()<.24?1:0);draw();announce('Grille aléatoire prête.');});
-    const clear=button('Effacer',()=>{pause();grid.fill(0);generation=0;draw();announce('Grille effacée.');});
+    const play=button(t('Démarrer','Start'),()=>timer?pause():start(),true);play.setAttribute('aria-pressed','false');
+    const step=button(t('Un pas','Step'),()=>{pause();advance();});
+    const random=button(t('Aléatoire','Random'),()=>{pause();generation=0;grid=Uint8Array.from(grid,()=>Math.random()<.24?1:0);draw();announce(t('Grille aléatoire prête.','Random grid ready.'));});
+    const clear=button(t('Effacer','Clear'),()=>{pause();grid.fill(0);generation=0;draw();announce(t('Grille effacée.','Grid cleared.'));});
     toolbar.append(play,step,random,clear);
     const options=el('div','life-options');
-    const patternLabel=el('label','','Motif de départ');const pattern=el('select');pattern.setAttribute('aria-label','Motif de départ');
-    [['glider','Planeur'],['blinker','Clignotant'],['pulsar','Pulsar'],['empty','Grille vide']].forEach(([value,label])=>{const o=el('option','',label);o.value=value;pattern.append(o);});patternLabel.append(pattern);
-    const speedLabel=el('label','','Vitesse');const speed=el('input');speed.type='range';speed.min='1';speed.max='20';speed.value='6';speed.setAttribute('aria-label','Vitesse de simulation');
-    const speedValue=el('output','','6 générations/s');speedLabel.append(speed,speedValue);options.append(patternLabel,speedLabel);
+    const patternLabel=el('label','',t('Motif de départ','Starting pattern'));const pattern=el('select');pattern.setAttribute('aria-label',t('Motif de départ','Starting pattern'));
+    [['glider',t('Planeur','Glider')],['blinker',t('Clignotant','Blinker')],['pulsar','Pulsar'],['empty',t('Grille vide','Empty grid')]].forEach(([value,label])=>{const o=el('option','',label);o.value=value;pattern.append(o);});patternLabel.append(pattern);
+    const speedLabel=el('label','',t('Vitesse','Speed'));const speed=el('input');speed.type='range';speed.min='1';speed.max='20';speed.value='6';speed.setAttribute('aria-label',t('Vitesse de simulation','Simulation speed'));
+    const speedValue=el('output','',t('6 générations/s','6 generations/s'));speedLabel.append(speed,speedValue);options.append(patternLabel,speedLabel);
     const canvas=el('canvas','life-canvas');canvas.width=cols*cell;canvas.height=rows*cell;canvas.tabIndex=0;
-    canvas.setAttribute('role','group');canvas.setAttribute('aria-label','Grille de 50 colonnes et 25 lignes. Flèches pour déplacer la sélection, espace pour activer ou désactiver une cellule.');
-    const instruction=el('p','life-help','Souris ou doigt : cliquer / glisser pour dessiner. Au clavier : flèches pour se déplacer, espace pour changer une cellule. Bords fermés : les cellules extérieures sont mortes.');instruction.id='life-instructions';canvas.setAttribute('aria-describedby',instruction.id);
-    const stats=el('p','life-stats');const status=el('p','life-status','Simulation en pause.');status.setAttribute('role','status');
-    const rules=el('details','life-rules');rules.append(el('summary','','Comprendre les règles'),el('p','','Une cellule vivante survit avec 2 ou 3 voisines. Une cellule morte naît avec exactement 3 voisines. Dans les autres cas, elle reste ou devient morte. À chaque génération, toutes les cellules évoluent en même temps.'));
+    canvas.setAttribute('role','group');canvas.setAttribute('aria-label',t('Grille de 50 colonnes et 25 lignes. Flèches pour déplacer la sélection, espace pour activer ou désactiver une cellule.','Grid of 50 columns and 25 rows. Use arrow keys to move, Space to toggle a cell.'));
+    const instruction=el('p','life-help',t('Souris ou doigt : cliquer / glisser pour dessiner. Au clavier : flèches pour se déplacer, espace pour changer une cellule. Bords fermés : les cellules extérieures sont mortes.','Mouse or touch: click or drag to draw. Keyboard: arrow keys to move, Space to toggle a cell. Cells outside the grid are dead.'));instruction.id='life-instructions';canvas.setAttribute('aria-describedby',instruction.id);
+    const stats=el('p','life-stats');const status=el('p','life-status',t('Simulation en pause.','Simulation paused.'));status.setAttribute('role','status');
+    const rules=el('details','life-rules');rules.append(el('summary','',t('Comprendre les règles','How the rules work')),el('p','',t('Une cellule vivante survit avec 2 ou 3 voisines. Une cellule morte naît avec exactement 3 voisines. Dans les autres cas, elle reste ou devient morte. À chaque génération, toutes les cellules évoluent en même temps.','A live cell survives with two or three neighbours. A dead cell becomes alive with exactly three neighbours. Otherwise it stays or becomes dead. Every cell updates simultaneously each generation.')));
     root.append(title,help,toolbar,options,canvas,stats,status,instruction,rules);
     const ctx=canvas.getContext('2d');
     function announce(text){status.textContent=text;}
@@ -51,13 +53,13 @@
       for(let x=0;x<=cols;x++){ctx.moveTo(x*cell+.5,0);ctx.lineTo(x*cell+.5,rows*cell);}
       for(let y=0;y<=rows;y++){ctx.moveTo(0,y*cell+.5);ctx.lineTo(cols*cell,y*cell+.5);}ctx.stroke();
       if(document.activeElement===canvas){ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.strokeRect(selection.x*cell+1,selection.y*cell+1,cell-2,cell-2);}
-      const alive=grid.reduce((sum,v)=>sum+v,0);stats.textContent=`Génération ${generation} · ${alive} cellule${alive===1?'':'s'} vivante${alive===1?'':'s'}`;
+      const alive=grid.reduce((sum,v)=>sum+v,0);stats.textContent=en?`Generation ${generation} · ${alive} live cell${alive===1?'':'s'}`:`Génération ${generation} · ${alive} cellule${alive===1?'':'s'} vivante${alive===1?'':'s'}`;
     }
-    function pause(){if(timer!==null)clearInterval(timer);timer=null;play.textContent='Démarrer';play.setAttribute('aria-pressed','false');announce('Simulation en pause.');}
-    function start(){if(timer!==null)return;timer=setInterval(advance,1000/Number(speed.value));play.textContent='Pause';play.setAttribute('aria-pressed','true');announce('Simulation en cours.');}
+    function pause(){if(timer!==null)clearInterval(timer);timer=null;play.textContent=t('Démarrer','Start');play.setAttribute('aria-pressed','false');announce(t('Simulation en pause.','Simulation paused.'));}
+    function start(){if(timer!==null)return;timer=setInterval(advance,1000/Number(speed.value));play.textContent='Pause';play.setAttribute('aria-pressed','true');announce(t('Simulation en cours.','Simulation running.'));}
     function advance(){
       const next=nextGeneration(grid,cols,rows);const stable=next.every((v,i)=>v===grid[i]);grid=next;generation++;draw();
-      if(stable){pause();announce('État stable atteint. Dessinez de nouvelles cellules ou choisissez un motif.');}
+      if(stable){pause();announce(t('État stable atteint. Dessinez de nouvelles cellules ou choisissez un motif.','Stable state reached. Draw new cells or choose a pattern.'));}
     }
     // Les motifs remplacent la grille et se chargent en pause : aucune animation
     // n’est imposée à l’arrivée sur la page ou pendant le dessin.
@@ -69,10 +71,10 @@
         for(const a of [2,3,4,8,9,10])for(const b of [0,5,7,12])points.push([a,b],[b,a]);
       }
       const offset=pattern.value==='pulsar'?{x:18,y:6}:{x:23,y:11};
-      points.forEach(([x,y])=>grid[(y+offset.y)*cols+x+offset.x]=1);draw();announce(pattern.value==='empty'?'Grille vide prête à dessiner.':'Motif '+pattern.selectedOptions[0].textContent+' chargé.');
+      points.forEach(([x,y])=>grid[(y+offset.y)*cols+x+offset.x]=1);draw();announce(pattern.value==='empty'?t('Grille vide prête à dessiner.','Empty grid ready to draw.'):t('Motif ','Pattern ')+pattern.selectedOptions[0].textContent+t(' chargé.',' loaded.'));
     }
     pattern.addEventListener('change',loadPattern);
-    speed.addEventListener('input',()=>{speedValue.textContent=speed.value+' générations/s';if(timer!==null){pause();start();}});
+    speed.addEventListener('input',()=>{speedValue.textContent=speed.value+t(' générations/s',' generations/s');if(timer!==null){pause();start();}});
     // Les coordonnées utilisent le rectangle affiché : le dessin reste exact
     // lorsque le canvas est réduit sur un écran mobile.
     function paint(event){const r=canvas.getBoundingClientRect();const x=Math.floor((event.clientX-r.left)/r.width*cols),y=Math.floor((event.clientY-r.top)/r.height*rows);if(x<0||y<0||x>=cols||y>=rows)return;const i=y*cols+x;if(i===lastCell)return;lastCell=i;selection={x,y};grid[i]=paintValue;draw();}
@@ -83,7 +85,7 @@
       const delta={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];
       if(delta){e.preventDefault();selection.x=Math.max(0,Math.min(cols-1,selection.x+delta[0]));selection.y=Math.max(0,Math.min(rows-1,selection.y+delta[1]));}
       else if(e.key===' '||e.key==='Enter'){e.preventDefault();pause();grid[selection.y*cols+selection.x]^=1;}else return;
-      draw();announce(`Ligne ${selection.y+1}, colonne ${selection.x+1} : cellule ${grid[selection.y*cols+selection.x]?'vivante':'morte'}.`);
+      draw();announce(en?`Row ${selection.y+1}, column ${selection.x+1}: ${grid[selection.y*cols+selection.x]?'live':'dead'} cell.`:`Ligne ${selection.y+1}, colonne ${selection.x+1} : cellule ${grid[selection.y*cols+selection.x]?'vivante':'morte'}.`);
     });
     canvas.addEventListener('focus',draw);canvas.addEventListener('blur',draw);
     const onHidden=()=>{if(document.hidden)pause();};document.addEventListener('visibilitychange',onHidden);

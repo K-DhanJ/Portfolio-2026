@@ -13,6 +13,10 @@ Le site est publié sur https://k-dhanj.github.io/Portfolio-2026/ depuis la bran
 - `style.css` : charte sombre, verre, responsive et préférences de mouvement.
 - `app.js` : navigation, cartes interactives et affichage des études de cas.
 - `content.js` : textes et médias issus des 19 pages du portfolio précédent.
+- `content-en.js` : version anglaise des 19 projets. Le bouton FR/EN conserve
+  la page ouverte et mémorise la langue dans le navigateur. `?lang=en` fournit
+  un lien direct vers la version anglaise. Les diapositives d'origine et le CV
+  restent en français ; le site le précise aux visiteurs anglophones.
 - `life.js` et `life.css` : Jeu de la vie interactif intégré au projet informatique.
 - `games/2048/` : moteur et interface en Python ; Brython 3.14.1 est fourni
   localement dans `vendor/` avec sa licence BSD. Le jeu est chargé uniquement
