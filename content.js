@@ -243,87 +243,104 @@ window.PORTFOLIO = [
     ]
   },
   {
-    "id": "recnorec",
-    "title": "Recnorec",
-    "category": "Matériau & événementiel",
-    "summary": "Aller au-delà de la plaque de plastique recyclé Recnorec.",
-    "cover": "assets/projects/recnorec.jpg",
+    "id": "compagnons",
+    "title": "Comp-AI-gnons",
+    "category": "Design pédagogique & interaction",
+    "summary": "Repenser le manuel scolaire numérique avec des compagnons pédagogiques et une manette multisensorielle.",
+    "cover": "assets/compagnons/manettes-3d.webp",
     "blocks": [
       {
         "type": "text",
-        "text": "Recnorec repense l’aménagement événementiel avec un matériau 100 % recyclable et modulable. Il propose des solutions durables et pratiques, alliant esthétique, fonctionnalité et respect de l’environnement"
+        "text": "Comment accompagner l’élève dans un environnement d’apprentissage plus bienveillant ? Comp-AI-gnons explore une alternative au manuel scolaire numérique classique : associer un site pédagogique, des personnages aux approches complémentaires et un objet interactif. Projet collectif réalisé avec Gaspard Bayle et Alexandre Vo Thanh."
       },
       {
         "type": "heading",
-        "text": "Problématique :"
+        "text": "Mon rôle : pilotage du projet & site web"
       },
       {
         "type": "text",
-        "text": "Comment aller au-delà de la plaque plastique recyclé Recnorec?"
+        "text": "J’ai assuré le lead du projet et la réalisation du site web. Ce travail s’inscrit dans une démarche collective associant recherche terrain, définition du concept et exploration des interactions entre interface et objet."
       },
       {
         "type": "heading",
-        "text": "Approche :"
+        "text": "Comprendre les usages au lycée"
       },
       {
         "type": "text",
-        "text": "Rendre l’événementiel responsable et extraordinaire grâce au matériau RecnoRec"
+        "text": "Observations, entretiens et recherche documentaire ont nourri l’étude des habitudes liées aux manuels papier et numériques. Les profils construits à partir des entretiens font apparaître des besoins différents : être rassuré, retrouver de la motivation ou approfondir ses connaissances. Le projet s’appuie sur une approche du care pour placer l’attention portée à l’élève au centre de la conception."
       },
       {
         "type": "text",
-        "text": "La phase de recherche a porté sur l’analyse des événements (publics, privés et d'entreprise) et des structures nécessaires, comme les chaises, stands, poubelles, panneaux, gradins et barrières. Deux axes clés ont été identifiés : la signalétique et les stands. Un benchmark a permis d'explorer les solutions existantes et de déterminer comment Recnorec pourrait se démarquer par sa modularité et sa recyclabilité. Des solutions ont été proposées pour offrir des structures modulables, combinant fonctionnalité, esthétique et respect de l’environnement"
+        "text": "Un premier POC a utilisé une affiche et un QR code pour observer l’intérêt suscité par le concept. La présentation rapporte 55 scans provenant du lycée La Fontaine, de la médiathèque Landowski et de Léonard de Vinci. Il s’agit d’un indicateur d’intérêt, sans mesure d’efficacité pédagogique."
       },
       {
         "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/2.jpg"
+        "src": "assets/compagnons/poc.webp",
+        "alt": "Affiche du POC avec QR code et présentation des lieux de diffusion",
+        "caption": "Une première mise à l’épreuve du concept pour observer l’intérêt du public."
+      },
+      {
+        "type": "heading",
+        "text": "Quatre façons d’accompagner l’élève"
+      },
+      {
+        "type": "text",
+        "text": "Le concept propose quatre compagnons : l’animateur transforme l’apprentissage en jeu ; le mentor apporte des explications et du contexte ; le complice encourage par des défis ; le calme privilégie une approche rassurante. Ces personnalités explorent différentes manières de rendre le contenu scolaire plus engageant, sans imposer une seule posture d’apprentissage."
       },
       {
         "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/3.jpg"
+        "src": "assets/compagnons/compagnons.webp",
+        "alt": "Les quatre personnages du concept Comp-AI-gnons : lézard, tortue, panda et singe",
+        "caption": "Des compagnons aux personnalités complémentaires, imaginés pour accompagner différents besoins."
+      },
+      {
+        "type": "heading",
+        "text": "Un site pour relier contenus & expérience"
+      },
+      {
+        "type": "text",
+        "text": "Le site web constitue le support numérique du projet. Les partis pris explorés associent compagnons, mini-défis, retours immédiats et progression visible. L’objectif est de donner des repères à l’élève et de rompre avec la simple transposition d’un manuel papier à l’écran. Le scénario d’usage relie cette expérience numérique à une manette interactive."
       },
       {
         "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/4.jpg"
+        "src": "assets/compagnons/scenario.webp",
+        "alt": "Storyboard illustrant le parcours d’un élève entre la classe et l’apprentissage accompagné",
+        "caption": "Scénario d’usage : replacer l’expérience proposée dans le quotidien de l’élève."
+      },
+      {
+        "type": "heading",
+        "text": "Une manette multisensorielle"
+      },
+      {
+        "type": "text",
+        "text": "L’exploration produit passe par des croquis, puis des modélisations et rendus sous Blender. La manette imaginée réunit des touches, un joystick, des lumières et un coussinet haptique. Les retours lumineux, sonores et vibratoires sont pensés pour guider, encourager ou apaiser selon le compagnon choisi. Ces interactions constituent des intentions de conception ; la présentation ne documente pas leur validation sur un dispositif matériel fonctionnel."
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {"src": "assets/compagnons/croquis-compagnons.webp", "alt": "Croquis exploratoires des quatre compagnons", "caption": "Recherche des personnages."},
+          {"src": "assets/compagnons/croquis-manette.webp", "alt": "Croquis de différentes formes de manettes", "caption": "Exploration de la forme et de la prise en main."}
+        ]
       },
       {
         "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/5.jpg"
+        "src": "assets/compagnons/interactions-manette.webp",
+        "alt": "Deux vues 3D de la manette avec touches, joystick, lumières et coussinet haptique légendés",
+        "caption": "Rendus 3D et répartition des interactions envisagées."
+      },
+      {
+        "type": "heading",
+        "text": "Mise à l’essai & enseignements"
+      },
+      {
+        "type": "text",
+        "text": "La présentation documente une séance de test utilisateur, sans détailler son protocole ni ses résultats. Le projet donne forme à une piste d’apprentissage associant interface, personnages et objet. Les effets recherchés sur la motivation, le stress et l’accessibilité restent des hypothèses à évaluer auprès des élèves."
       },
       {
         "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/6.jpg"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/7.jpg"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/8.jpg"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/9.jpg"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/11.jpg"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/12.jpg"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/13.jpg"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/14.jpg"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/Recnorec/pres/15.jpg"
+        "src": "assets/compagnons/test-utilisateur.webp",
+        "alt": "Photographies de la séance de test utilisateur devant un ordinateur",
+        "caption": "Séance de mise à l’essai présentée dans le dossier du projet."
       }
     ]
   },

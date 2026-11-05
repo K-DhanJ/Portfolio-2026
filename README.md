@@ -23,6 +23,11 @@ Le site est publié sur https://k-dhanj.github.io/Portfolio-2026/ depuis la bran
 Les fichiers de présentation contiennent des commentaires explicatifs.
 Les versions précédentes restent récupérables dans l’historique Git.
 
+Comp-AI-gnons remplace Recnorec dans la sélection. Les visuels WebP de
+`assets/compagnons/` proviennent de la présentation fournie « Projet lycée » ;
+le PDF complet n’est pas publié. Le rôle individuel (lead du projet et site web)
+a été confirmé par Kevidu. Les anciens liens Recnorec redirigent vers ce projet.
+
 ## Aperçu local
 
 Lancer `python -m http.server 4175` dans ce dossier puis ouvrir

@@ -41,7 +41,7 @@ function work(view) {
 function info(view) {
   view.append(node('p','label','Profil'),heading('Entre ingénierie, design et usages.',1)); view.lastChild.className='info-title';
   const panel=node('section','profile-panel'); panel.append(heading('Kevidu Kussiyage'),node('p','','Après six années dans un double cursus ingénieur·designer, je cherche un stage de six mois en ingénierie, design ou conception hybride.'));
-  panel.append(node('p','','Mes projets explorent les interactions automobiles, l’adoption du numérique en agriculture, les matériaux recyclés, la collecte de données et les expériences immersives.'));
+  panel.append(node('p','','Mes projets explorent les interactions automobiles, l’adoption du numérique en agriculture, les expériences pédagogiques, la collecte de données et les expériences immersives.'));
   const columns=node('div','profile-columns'); const a=node('div'); a.append(node('p','label','Pratique du design'),node('p','','Graphisme · Matière · Sculpture · Croquis · Animation · Modélisation 3D'));
   const b=node('div'); b.append(node('p','label','Pratique informatique'),node('p','','C · HTML / CSS / JavaScript · Python · Java · SQL · Unix')); columns.append(a,b);panel.append(columns);view.append(panel,contacts());
 }
@@ -84,6 +84,8 @@ function render(){
   const hash=decodeURIComponent(location.hash.slice(1)||'work');
   // Les liens déjà partagés vers PetApp ouvrent le projet qui le remplace.
   if(hash==='project/petapp'){location.replace('#project/surveillance');return;}
+  // L’ancien lien Recnorec reste utilisable après le remplacement du projet.
+  if(hash==='project/recnorec'){location.replace('#project/compagnons');return;}
   if(hash==='selected'||hash==='main'||hash.startsWith('section-'))return;
   if(route===hash)return;disposeView();disposeView=()=>{};route=hash;document.title='Kevidu Kussiyage — Ingénierie & Design';
   const view=node('div','view'); if(hash==='info')info(view);else if(hash.startsWith('project/'))detail(view,hash.slice(8));else work(view);
