@@ -49,10 +49,12 @@ function work(view) {
   const label=node('div','selection'); label.id='selected'; label.append(heading(tr('Sélection de projets / 2026','Selected projects / 2026')),node('span','','01 — 05')); view.append(label);
   const grid=node('section','projects'); grid.setAttribute('aria-label',tr('Études de cas','Case studies'));
   const tones=['#45524f','#e1d7bc','#949e88','#bfc4d4','#c7b6db'];
+  // Les illustrations de l'accueil sont indépendantes des visuels des études de cas.
+  const homeThumbnails={renault:'assets/projects/home-renault.jpg',inrae:'assets/projects/home-inrae.jpg','epopee-temporelle':'assets/projects/home-epopee-temporelle.jpg',mgp:'assets/projects/home-mgp.jpg',numix:'assets/projects/home-numix.jpg'};
   projects.slice(0,5).forEach((p,i)=>{
     const card=link('',`#project/${p.id}`,'project-card reveal'); card.style.setProperty('--tone',tones[i]);
     const head=node('div','card-head'); head.append(heading(p.title,3),node('span','arrow','↗'));
-    const copy=node('p','',p.category+' — '+p.summary); const media=node('div','card-media'); if(p.cover) media.append(image(p.cover,tr('Aperçu du projet ','Preview of project ')+p.title));
+    const copy=node('p','',p.category+' — '+p.summary); const media=node('div','card-media'); const thumbnail=homeThumbnails[p.id]||p.cover; if(thumbnail){if(homeThumbnails[p.id])media.classList.add('card-media--illustration');media.append(image(thumbnail,tr('Illustration du projet ','Illustration for project ')+p.title));}
     card.append(head,copy,media); card.dataset.cursor='true'; grid.append(card);
   }); view.append(grid);
   const explore=node('section','explore'); explore.append(node('p','label',tr('Autres travaux','Other work')),heading(tr('Explorations créatives & techniques.','Creative & technical explorations.')));
