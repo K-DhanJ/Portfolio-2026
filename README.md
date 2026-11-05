@@ -23,12 +23,13 @@ Le site est publié sur https://k-dhanj.github.io/Portfolio-2026/ depuis la bran
 Les fichiers de présentation contiennent des commentaires explicatifs.
 Les versions précédentes restent récupérables dans l’historique Git.
 
-Comp-AI-gnons remplace Recnorec dans la sélection. Les visuels WebP de
-`assets/compagnons/` proviennent de la présentation fournie « Projet lycée » ;
-le PDF complet n’est pas publié. Le rôle individuel (lead du projet et site web)
-a été confirmé par Kevidu. Les anciens liens Recnorec redirigent vers ce projet.
-Les diapositives sont réparties dans l’étude de cas selon la recherche, le
-concept et les interactions ; elles s’agrandissent au clic.
+L’Épopée Temporelle remplace le troisième projet de la sélection. Les visuels
+WebP de `assets/epopee-temporelle/` proviennent du PDF fourni « Stratégie réseaux
+sociaux », qui présente en réalité un workshop pour l’abbaye de Maubuisson.
+Le PDF entier n’est pas publié : certaines pages d’enquête identifient des
+personnes interrogées. Les liens Recnorec et Comp-AI-gnons redirigent vers le
+nouveau projet. Les diapositives suivent l’enquête, le concept, la scénographie
+et le parcours proposé ; elles s’agrandissent au clic.
 
 ## Aperçu local
 

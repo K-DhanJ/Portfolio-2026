@@ -243,165 +243,217 @@ window.PORTFOLIO = [
     ]
   },
   {
-    "id": "compagnons",
-    "title": "Comp-AI-gnons",
-    "category": "Design pédagogique & interaction",
-    "summary": "Repenser le manuel scolaire numérique avec des compagnons pédagogiques et une manette multisensorielle.",
-    "cover": "assets/compagnons/manettes-3d.webp",
+    "id": "epopee-temporelle",
+    "title": "L’Épopée Temporelle",
+    "category": "Design d’expérience & patrimoine",
+    "summary": "Inviter les visiteurs du parc à découvrir l’histoire de l’abbaye de Maubuisson grâce à un parcours ludique.",
+    "cover": "assets/epopee-temporelle/scenographie.webp",
     "blocks": [
       {
         "type": "text",
-        "text": "Comment accompagner l’élève dans un environnement d’apprentissage plus bienveillant ? Comp-AI-gnons explore une alternative au manuel scolaire numérique classique : associer un site pédagogique, des personnages aux approches complémentaires et un objet interactif. Projet collectif réalisé avec Gaspard Bayle et Alexandre Vo Thanh."
+        "text": "Workshop ingénieur-designer réalisé en 2022–2023 avec Valentine Feraud et Gaspard Bayle. À partir d’une enquête sur place, le groupe a imaginé un parcours historique et interactif reliant le parc à l’abbaye de Maubuisson, puis une proposition de restauration conviviale, « La Gargotte »."
       },
       {
         "type": "heading",
-        "text": "Mon rôle : pilotage du projet & site web"
+        "text": "Ma contribution : de l’idéation à la visualisation"
       },
       {
         "type": "text",
-        "text": "J’ai assuré le lead du projet et la réalisation du site web. Ce travail s’inscrit dans une démarche collective associant recherche terrain, définition du concept et exploration des interactions entre interface et objet."
-      },
-      {
-        "type": "image",
-        "src": "assets/compagnons/recherche-terrain.webp",
-        "alt": "Diapositive présentant la démarche d’étude terrain : observations, entretiens et POC",
-        "caption": "La démarche du groupe : observer les usages avant de définir la solution."
+        "text": "J’ai contribué à plusieurs étapes du projet, en particulier aux croquis, à l’idéation de la solution finale et à sa visualisation. La recherche, les choix et la présentation ont été menés en équipe."
       },
       {
         "type": "heading",
-        "text": "Comprendre les usages au lycée"
+        "text": "Enquête de terrain"
       },
       {
         "type": "text",
-        "text": "Observations, entretiens et recherche documentaire ont nourri l’étude des habitudes liées aux manuels papier et numériques. Les profils construits à partir des entretiens font apparaître des besoins différents : être rassuré, retrouver de la motivation ou approfondir ses connaissances. Le projet s’appuie sur une approche du care pour placer l’attention portée à l’élève au centre de la conception."
-      },
-      {
-        "type": "image",
-        "src": "assets/compagnons/question-depart.webp",
-        "alt": "Diapositive posant la question : comment créer un espace bienveillant pour l’épanouissement scolaire ?",
-        "caption": "La question qui oriente la recherche."
+        "text": "Les entretiens réalisés dans le parc et dans le centre de Saint-Ouen-l’Aumône font ressortir un écart entre la fréquentation du parc et celle de l’abbaye. Le dossier relève notamment un manque d’informations, de liens visibles avec l’histoire du lieu, d’interactions et d’espaces où s’arrêter."
       },
       {
         "type": "gallery",
         "items": [
-          {"src": "assets/compagnons/care-multisensoriel.webp", "alt": "Diapositive sur l’apprentissage multisensoriel", "caption": "Explorer plusieurs façons d’apprendre."},
-          {"src": "assets/compagnons/care-accessibilite.webp", "alt": "Diapositive sur l’accessibilité des contenus", "caption": "Prendre en compte les besoins spécifiques."},
-          {"src": "assets/compagnons/care-stress.webp", "alt": "Diapositive sur la réduction du stress", "caption": "Créer une expérience plus rassurante."},
-          {"src": "assets/compagnons/care-ludique.webp", "alt": "Diapositive sur l’apprentissage ludique", "caption": "Soutenir l’engagement par l’interaction."}
+          {
+            "src": "assets/epopee-temporelle/paroles-visiteurs-parc.webp",
+            "alt": "Diapositive réunissant des paroles de visiteurs du parc",
+            "caption": "Paroles recueillies dans le parc."
+          },
+          {
+            "src": "assets/epopee-temporelle/paroles-habitants.webp",
+            "alt": "Diapositive réunissant des paroles d’habitants du quartier",
+            "caption": "Paroles recueillies auprès d’habitants."
+          }
         ]
       },
       {
         "type": "image",
-        "src": "assets/compagnons/objectifs-experience.webp",
-        "alt": "Diapositive résumant les intentions de l’expérience : bien-être, interactions sonores et gestuelles, nouvelle posture d’apprentissage",
-        "caption": "Des intentions de design issues de l’étude, à vérifier auprès des élèves."
-      },
-      {
-        "type": "text",
-        "text": "Un premier POC a utilisé une affiche et un QR code pour observer l’intérêt suscité par le concept. La présentation rapporte 55 scans provenant du lycée La Fontaine, de la médiathèque Landowski et de Léonard de Vinci. Il s’agit d’un indicateur d’intérêt, sans mesure d’efficacité pédagogique."
+        "src": "assets/epopee-temporelle/besoins-recurrents.webp",
+        "alt": "Diapositive listant les problèmes récurrents observés sur le site",
+        "caption": "Synthèse des besoins relevés lors de l’enquête."
       },
       {
         "type": "image",
-        "src": "assets/compagnons/poc.webp",
-        "alt": "Affiche du POC avec QR code et présentation des lieux de diffusion",
-        "caption": "Une première mise à l’épreuve du concept pour observer l’intérêt du public."
+        "src": "assets/epopee-temporelle/question.webp",
+        "alt": "Diapositive demandant comment allonger le temps passé à l’abbaye par les habitants",
+        "caption": "La problématique retenue par le groupe."
       },
       {
         "type": "heading",
-        "text": "Quatre façons d’accompagner l’élève"
+        "text": "Trois pistes, puis un parcours"
       },
       {
         "type": "text",
-        "text": "Le concept propose quatre compagnons : l’animateur transforme l’apprentissage en jeu ; le mentor apporte des explications et du contexte ; le complice encourage par des défis ; le calme privilégie une approche rassurante. Ces personnalités explorent différentes manières de rendre le contenu scolaire plus engageant, sans imposer une seule posture d’apprentissage."
-      },
-      {
-        "type": "image",
-        "src": "assets/compagnons/objectifs-projet.webp",
-        "alt": "Carte des objectifs du projet : care, épanouissement scolaire et compagnons",
-        "caption": "Les compagnons apparaissent dans la synthèse des objectifs du groupe."
-      },
-      {
-        "type": "image",
-        "src": "assets/compagnons/compagnons.webp",
-        "alt": "Les quatre personnages du concept Comp-AI-gnons : lézard, tortue, panda et singe",
-        "caption": "Des compagnons aux personnalités complémentaires, imaginés pour accompagner différents besoins."
+        "text": "Le groupe a exploré la signalétique, le lien historique et l’événementiel. Une carte du parcours actuel, des premières idées et un benchmark ont aidé à définir la proposition : donner aux personnes qui traversent le parc une raison d’entrer dans l’abbaye et d’y prolonger leur visite."
       },
       {
         "type": "gallery",
         "items": [
-          {"src": "assets/compagnons/animateur.webp", "alt": "Diapositive présentant le compagnon animateur", "caption": "L’animateur : jeu, humour et défis."},
-          {"src": "assets/compagnons/mentor.webp", "alt": "Diapositive présentant le compagnon mentor", "caption": "Le mentor : explications et contexte."},
-          {"src": "assets/compagnons/complice.webp", "alt": "Diapositive présentant le compagnon complice", "caption": "Le complice : encouragements et récompenses."},
-          {"src": "assets/compagnons/calme.webp", "alt": "Diapositive présentant le compagnon calme", "caption": "Le calme : une approche rassurante."}
+          {
+            "src": "assets/epopee-temporelle/axes-de-recherche.webp",
+            "alt": "Diapositive présentant les trois axes de solution : signalétique, histoire et événementiel",
+            "caption": "Trois axes envisagés."
+          },
+          {
+            "src": "assets/epopee-temporelle/parcours-existant.webp",
+            "alt": "Carte d’expérience de la visite actuelle et de ses points de friction",
+            "caption": "Le parcours existant."
+          },
+          {
+            "src": "assets/epopee-temporelle/premieres-idees.webp",
+            "alt": "Planche d’images des premières idées du groupe",
+            "caption": "Premières pistes d’idéation."
+          },
+          {
+            "src": "assets/epopee-temporelle/benchmark.webp",
+            "alt": "Planche comparative de dispositifs historiques et ludiques",
+            "caption": "Références étudiées."
+          }
         ]
       },
       {
         "type": "heading",
-        "text": "Un site pour relier contenus & expérience"
+        "text": "L’Épopée Temporelle"
       },
       {
         "type": "text",
-        "text": "Le site web constitue le support numérique du projet. Les partis pris explorés associent compagnons, mini-défis, retours immédiats et progression visible. L’objectif est de donner des repères à l’élève et de rompre avec la simple transposition d’un manuel papier à l’écran. Le scénario d’usage relie cette expérience numérique à une manette interactive."
+        "text": "Le concept relie sept temps forts de l’histoire de l’abbaye dans un chemin à parcourir. Des stèles illustrées et des jeux ponctuent la progression ; la visite peut se poursuivre dans l’abbaye, puis autour d’un repas à « La Gargotte ». Il s’agit d’une proposition de design présentée en workshop, pas d’une installation réalisée sur le site."
       },
       {
         "type": "image",
-        "src": "assets/compagnons/principes-interaction.webp",
-        "alt": "Diapositive décrivant les pistes de gamification, de retour immédiat et de progression visible",
-        "caption": "Principes imaginés pour le site : défis, retours et progression."
+        "src": "assets/epopee-temporelle/concept.webp",
+        "alt": "Diapositive expliquant le concept et ses objectifs",
+        "caption": "L’intention générale du parcours."
       },
       {
         "type": "image",
-        "src": "assets/compagnons/scenario.webp",
-        "alt": "Storyboard illustrant le parcours d’un élève entre la classe et l’apprentissage accompagné",
-        "caption": "Scénario d’usage : replacer l’expérience proposée dans le quotidien de l’élève."
+        "src": "assets/epopee-temporelle/chronologie.webp",
+        "alt": "Frise présentant sept périodes de l’histoire de l’abbaye de Maubuisson",
+        "caption": "La chronologie retenue pour structurer les étapes."
+      },
+      {
+        "type": "image",
+        "src": "assets/epopee-temporelle/carte.webp",
+        "alt": "Plan de l’abbaye et de son parc avec le parcours imaginé",
+        "caption": "Implantation proposée des étapes."
       },
       {
         "type": "heading",
-        "text": "Une manette multisensorielle"
+        "text": "Stèles, jeux et scénographie"
       },
       {
         "type": "text",
-        "text": "L’exploration produit passe par des croquis, puis des modélisations et rendus sous Blender. La manette imaginée réunit des touches, un joystick, des lumières et un coussinet haptique. Les retours lumineux, sonores et vibratoires sont pensés pour guider, encourager ou apaiser selon le compagnon choisi. Ces interactions constituent des intentions de conception ; la présentation ne documente pas leur validation sur un dispositif matériel fonctionnel."
+        "text": "Les croquis montrent sept panneaux associés aux périodes historiques et des interactions ludiques adaptées aux différentes étapes. Un chemin de galets sert de fil conducteur entre les points d’arrêt. Les planches de scénographie situent ces éléments dans les espaces extérieurs de l’abbaye."
       },
       {
         "type": "gallery",
         "items": [
-          {"src": "assets/compagnons/variantes-visuelles.webp", "alt": "Diapositive de recherche visuelle de personnages et de styles", "caption": "Variantes visuelles explorées."},
-          {"src": "assets/compagnons/modelisation-blender.webp", "alt": "Diapositive de modélisation 3D sous Blender", "caption": "Passage du croquis au volume."}
+          {
+            "src": "assets/epopee-temporelle/steles-anciennes.webp",
+            "alt": "Croquis de stèles historiques pour les premières périodes du parcours",
+            "caption": "Stèles, première série."
+          },
+          {
+            "src": "assets/epopee-temporelle/steles-modernes.webp",
+            "alt": "Croquis de stèles historiques pour les dernières périodes du parcours",
+            "caption": "Stèles, seconde série."
+          }
         ]
       },
       {
         "type": "gallery",
         "items": [
-          {"src": "assets/compagnons/croquis-compagnons.webp", "alt": "Croquis exploratoires des quatre compagnons", "caption": "Recherche des personnages."},
-          {"src": "assets/compagnons/croquis-manette.webp", "alt": "Croquis de différentes formes de manettes", "caption": "Exploration de la forme et de la prise en main."}
+          {
+            "src": "assets/epopee-temporelle/jeux-anciens.webp",
+            "alt": "Croquis de jeux interactifs pour les premières étapes",
+            "caption": "Jeux, première série."
+          },
+          {
+            "src": "assets/epopee-temporelle/jeux-modernes.webp",
+            "alt": "Croquis de jeux interactifs pour les dernières étapes",
+            "caption": "Jeux, seconde série."
+          }
         ]
       },
       {
-        "type": "image",
-        "src": "assets/compagnons/interactions-manette.webp",
-        "alt": "Deux vues 3D de la manette avec touches, joystick, lumières et coussinet haptique légendés",
-        "caption": "Rendus 3D et répartition des interactions envisagées."
-      },
-      {
-        "type": "image",
-        "src": "assets/compagnons/retours-sensoriels.webp",
-        "alt": "Diapositive décrivant les effets de lumière, vibration et son imaginés pour chaque compagnon",
-        "caption": "Un langage sensoriel distinct imaginé pour chaque compagnon."
+        "type": "gallery",
+        "items": [
+          {
+            "src": "assets/epopee-temporelle/chemin.webp",
+            "alt": "Diapositive montrant l’idée de chemin de galets dans le parc",
+            "caption": "Un fil conducteur au sol."
+          },
+          {
+            "src": "assets/epopee-temporelle/scenographie.webp",
+            "alt": "Photographies du parc annotées avec les stèles imaginées",
+            "caption": "Mise en situation de la scénographie."
+          }
+        ]
       },
       {
         "type": "heading",
-        "text": "Mise à l’essai & enseignements"
+        "text": "La Gargotte : prolonger la visite"
       },
       {
         "type": "text",
-        "text": "La présentation documente une séance de test utilisateur, sans détailler son protocole ni ses résultats. Le projet donne forme à une piste d’apprentissage associant interface, personnages et objet. Les effets recherchés sur la motivation, le stress et l’accessibilité restent des hypothèses à évaluer auprès des élèves."
+        "text": "Le dossier propose un point de restauration inspiré d’une ambiance médiévale, avec une terrasse possible en été et un panier à emporter dans le parc. Menus, vaisselle et ambiance sont explorés comme pistes de service pour créer un moment convivial après le parcours."
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {
+            "src": "assets/epopee-temporelle/gargotte.webp",
+            "alt": "Diapositive présentant la proposition de restauration La Gargotte",
+            "caption": "Un point d’arrivée convivial."
+          },
+          {
+            "src": "assets/epopee-temporelle/terrasse.webp",
+            "alt": "Photographies de terrasse et de pique-nique pour l’implantation envisagée",
+            "caption": "Manger dans l’abbaye ou dans le parc."
+          },
+          {
+            "src": "assets/epopee-temporelle/panier.webp",
+            "alt": "Planche de références pour une nappe et un panier de pique-nique",
+            "caption": "Un service à emporter imaginé."
+          },
+          {
+            "src": "assets/epopee-temporelle/menu.webp",
+            "alt": "Proposition graphique de menu et références culinaires",
+            "caption": "Une offre de restauration envisagée."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Parcours d’usage final"
+      },
+      {
+        "type": "text",
+        "text": "Le schéma final relie la découverte du chemin, les stèles, les jeux, l’exposition et la pause à La Gargotte. Il synthétise la manière dont le groupe souhaitait allonger et enrichir la visite. Le dossier ne présente pas de test de ce parcours après installation."
       },
       {
         "type": "image",
-        "src": "assets/compagnons/test-utilisateur.webp",
-        "alt": "Photographies de la séance de test utilisateur devant un ordinateur",
-        "caption": "Séance de mise à l’essai présentée dans le dossier du projet."
+        "src": "assets/epopee-temporelle/parcours-propose.webp",
+        "alt": "Carte d’expérience du parcours proposé, des stèles à l’exposition et à La Gargotte",
+        "caption": "La visite imaginée de bout en bout."
       }
     ]
   },
