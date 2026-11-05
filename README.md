@@ -27,6 +27,8 @@ Comp-AI-gnons remplace Recnorec dans la sélection. Les visuels WebP de
 `assets/compagnons/` proviennent de la présentation fournie « Projet lycée » ;
 le PDF complet n’est pas publié. Le rôle individuel (lead du projet et site web)
 a été confirmé par Kevidu. Les anciens liens Recnorec redirigent vers ce projet.
+Les diapositives sont réparties dans l’étude de cas selon la recherche, le
+concept et les interactions ; elles s’agrandissent au clic.
 
 ## Aperçu local
 

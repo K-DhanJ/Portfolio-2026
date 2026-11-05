@@ -262,12 +262,39 @@ window.PORTFOLIO = [
         "text": "J’ai assuré le lead du projet et la réalisation du site web. Ce travail s’inscrit dans une démarche collective associant recherche terrain, définition du concept et exploration des interactions entre interface et objet."
       },
       {
+        "type": "image",
+        "src": "assets/compagnons/recherche-terrain.webp",
+        "alt": "Diapositive présentant la démarche d’étude terrain : observations, entretiens et POC",
+        "caption": "La démarche du groupe : observer les usages avant de définir la solution."
+      },
+      {
         "type": "heading",
         "text": "Comprendre les usages au lycée"
       },
       {
         "type": "text",
         "text": "Observations, entretiens et recherche documentaire ont nourri l’étude des habitudes liées aux manuels papier et numériques. Les profils construits à partir des entretiens font apparaître des besoins différents : être rassuré, retrouver de la motivation ou approfondir ses connaissances. Le projet s’appuie sur une approche du care pour placer l’attention portée à l’élève au centre de la conception."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/question-depart.webp",
+        "alt": "Diapositive posant la question : comment créer un espace bienveillant pour l’épanouissement scolaire ?",
+        "caption": "La question qui oriente la recherche."
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {"src": "assets/compagnons/care-multisensoriel.webp", "alt": "Diapositive sur l’apprentissage multisensoriel", "caption": "Explorer plusieurs façons d’apprendre."},
+          {"src": "assets/compagnons/care-accessibilite.webp", "alt": "Diapositive sur l’accessibilité des contenus", "caption": "Prendre en compte les besoins spécifiques."},
+          {"src": "assets/compagnons/care-stress.webp", "alt": "Diapositive sur la réduction du stress", "caption": "Créer une expérience plus rassurante."},
+          {"src": "assets/compagnons/care-ludique.webp", "alt": "Diapositive sur l’apprentissage ludique", "caption": "Soutenir l’engagement par l’interaction."}
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/objectifs-experience.webp",
+        "alt": "Diapositive résumant les intentions de l’expérience : bien-être, interactions sonores et gestuelles, nouvelle posture d’apprentissage",
+        "caption": "Des intentions de design issues de l’étude, à vérifier auprès des élèves."
       },
       {
         "type": "text",
@@ -289,9 +316,24 @@ window.PORTFOLIO = [
       },
       {
         "type": "image",
+        "src": "assets/compagnons/objectifs-projet.webp",
+        "alt": "Carte des objectifs du projet : care, épanouissement scolaire et compagnons",
+        "caption": "Les compagnons apparaissent dans la synthèse des objectifs du groupe."
+      },
+      {
+        "type": "image",
         "src": "assets/compagnons/compagnons.webp",
         "alt": "Les quatre personnages du concept Comp-AI-gnons : lézard, tortue, panda et singe",
         "caption": "Des compagnons aux personnalités complémentaires, imaginés pour accompagner différents besoins."
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {"src": "assets/compagnons/animateur.webp", "alt": "Diapositive présentant le compagnon animateur", "caption": "L’animateur : jeu, humour et défis."},
+          {"src": "assets/compagnons/mentor.webp", "alt": "Diapositive présentant le compagnon mentor", "caption": "Le mentor : explications et contexte."},
+          {"src": "assets/compagnons/complice.webp", "alt": "Diapositive présentant le compagnon complice", "caption": "Le complice : encouragements et récompenses."},
+          {"src": "assets/compagnons/calme.webp", "alt": "Diapositive présentant le compagnon calme", "caption": "Le calme : une approche rassurante."}
+        ]
       },
       {
         "type": "heading",
@@ -300,6 +342,12 @@ window.PORTFOLIO = [
       {
         "type": "text",
         "text": "Le site web constitue le support numérique du projet. Les partis pris explorés associent compagnons, mini-défis, retours immédiats et progression visible. L’objectif est de donner des repères à l’élève et de rompre avec la simple transposition d’un manuel papier à l’écran. Le scénario d’usage relie cette expérience numérique à une manette interactive."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/principes-interaction.webp",
+        "alt": "Diapositive décrivant les pistes de gamification, de retour immédiat et de progression visible",
+        "caption": "Principes imaginés pour le site : défis, retours et progression."
       },
       {
         "type": "image",
@@ -318,6 +366,13 @@ window.PORTFOLIO = [
       {
         "type": "gallery",
         "items": [
+          {"src": "assets/compagnons/variantes-visuelles.webp", "alt": "Diapositive de recherche visuelle de personnages et de styles", "caption": "Variantes visuelles explorées."},
+          {"src": "assets/compagnons/modelisation-blender.webp", "alt": "Diapositive de modélisation 3D sous Blender", "caption": "Passage du croquis au volume."}
+        ]
+      },
+      {
+        "type": "gallery",
+        "items": [
           {"src": "assets/compagnons/croquis-compagnons.webp", "alt": "Croquis exploratoires des quatre compagnons", "caption": "Recherche des personnages."},
           {"src": "assets/compagnons/croquis-manette.webp", "alt": "Croquis de différentes formes de manettes", "caption": "Exploration de la forme et de la prise en main."}
         ]
@@ -327,6 +382,12 @@ window.PORTFOLIO = [
         "src": "assets/compagnons/interactions-manette.webp",
         "alt": "Deux vues 3D de la manette avec touches, joystick, lumières et coussinet haptique légendés",
         "caption": "Rendus 3D et répartition des interactions envisagées."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/retours-sensoriels.webp",
+        "alt": "Diapositive décrivant les effets de lumière, vibration et son imaginés pour chaque compagnon",
+        "caption": "Un langage sensoriel distinct imaginé pour chaque compagnon."
       },
       {
         "type": "heading",
