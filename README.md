@@ -15,13 +15,16 @@ Le site est publié sur https://k-dhanj.github.io/Portfolio-2026/ depuis la bran
 - `content.js` : textes et médias issus des 19 pages du portfolio précédent.
 - `content-en.js` : version anglaise des 19 projets. Le bouton FR/EN conserve
   la page ouverte et mémorise la langue dans le navigateur. `?lang=en` fournit
-  un lien direct vers la version anglaise. Les diapositives d'origine et le CV
-  restent en français ; le site le précise aux visiteurs anglophones.
+  un lien direct vers la version anglaise. Les diapositives d'origine restent
+  en français ; les deux versions du CV suivent la langue choisie.
 - `life.js` et `life.css` : Jeu de la vie interactif intégré au projet informatique.
 - `games/2048/` : moteur et interface en Python ; Brython 3.14.1 est fourni
   localement dans `vendor/` avec sa licence BSD. Le jeu est chargé uniquement
   lorsque sa page est ouverte.
-- `assets/` : CV, images, vidéos et documents disponibles.
+- `assets/cv-kevidu-kussiyage.pdf` : dernier CV français fourni.
+- `assets/cv-kevidu-kussiyage-en.pdf` : traduction anglaise sur une page.
+- `scripts/generate_cv_en.py` : source reproductible du CV anglais.
+- `assets/` : images, vidéos et autres documents disponibles.
 - `pages/` : redirections des anciennes adresses vers les nouvelles études.
 
 Les fichiers de présentation contiennent des commentaires explicatifs.

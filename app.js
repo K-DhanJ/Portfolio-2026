@@ -1,7 +1,7 @@
 /* Petites fonctions de création DOM : les textes restent des textes et ne sont
    jamais exécutés comme du HTML. Les données proviennent de content.js. */
 const messages={
-  skip:['Aller au contenu','Skip to content'],identity:['Ingénierie & Design','Engineering & Design'],navigation:['Navigation principale','Main navigation'],footerNav:['NAVIGATION','NAVIGATION'],language:['Langue','Language'],projects:['Projets','Projects'],profile:['Profil','About'],headerCv:['CV ↗','CV (FR) ↗'],downloadCv:['Télécharger le CV ↓','Download CV (French) ↓'],tagline:['Ingénierie, design et usages.','Engineering, design and people.'],backToProjects:['↑ Retour aux projets','↑ Back to projects'],open:['Ouvrir ↗','Open ↗'],enlarged:['Vue agrandie','Enlarged image'],close:['Fermer ×','Close ×'],closeLabel:['Fermer la vue agrandie','Close enlarged image']
+  skip:['Aller au contenu','Skip to content'],identity:['Ingénierie & Design','Engineering & Design'],navigation:['Navigation principale','Main navigation'],footerNav:['NAVIGATION','NAVIGATION'],language:['Langue','Language'],projects:['Projets','Projects'],profile:['Profil','About'],headerCv:['CV ↗','CV ↗'],downloadCv:['Télécharger le CV ↓','Download CV ↓'],tagline:['Ingénierie, design et usages.','Engineering, design and people.'],backToProjects:['↑ Retour aux projets','↑ Back to projects'],open:['Ouvrir ↗','Open ↗'],enlarged:['Vue agrandie','Enlarged image'],close:['Fermer ×','Close ×'],closeLabel:['Fermer la vue agrandie','Close enlarged image']
 };
 const params=new URLSearchParams(location.search);
 let storedLanguage='fr';try{storedLanguage=localStorage.getItem('portfolio-language')||'fr';}catch{}
@@ -9,11 +9,13 @@ let language=['fr','en'].includes(params.get('lang'))?params.get('lang'):storedL
 window.portfolioLanguage=language;
 let projects=language==='en'?window.PORTFOLIO_EN:window.PORTFOLIO;
 const tr=(fr,en)=>language==='en'?en:fr;
+const cvHref=()=>tr('assets/cv-kevidu-kussiyage.pdf?v=2026-11','assets/cv-kevidu-kussiyage-en.pdf');
 function translateShell(){
   document.documentElement.lang=language;
   document.querySelector('meta[name=description]').content=tr('Kevidu Kussiyage — ingénierie, design et usages. Projets et explorations d’un double cursus ingénieur-designer.','Kevidu Kussiyage — engineering, design and user experiences. Projects from a dual engineering and design degree.');
   document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=messages[el.dataset.i18n][language==='en'?1:0];});
   document.querySelectorAll('[data-i18n-aria]').forEach(el=>{el.setAttribute('aria-label',messages[el.dataset.i18nAria][language==='en'?1:0]);});
+  document.querySelectorAll('[data-cv]').forEach(el=>{el.href=cvHref();});
   document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===language)));
 }
 document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{
@@ -35,7 +37,7 @@ function contacts() {
   const section=node('section','contact-strip'); section.append(heading(tr('Échangeons sur votre prochain projet.','Let’s talk about your next project.')));
   const row=node('div','contact-links');
   row.append(link('E-mail ↗','mailto:kevidudk@yahoo.com','pill'),link('LinkedIn ↗','https://www.linkedin.com/in/kevidu-d-kussiyage-8ba806270/','pill'));
-  const cv=link(tr('Télécharger le CV ↓','Download CV (French) ↓'),'assets/cv-kevidu-kussiyage.pdf','pill'); cv.download=''; row.append(cv); section.append(row); return section;
+  const cv=link(tr('Télécharger le CV ↓','Download CV ↓'),cvHref(),'pill'); cv.download=''; row.append(cv); section.append(row); return section;
 }
 
 /* Vue Projets : la fenêtre introductive, les cinq cas et tous les travaux
