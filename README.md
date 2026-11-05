@@ -21,9 +21,10 @@ Le site est publié sur https://k-dhanj.github.io/Portfolio-2026/ depuis la bran
 - `games/2048/` : moteur et interface en Python ; Brython 3.14.1 est fourni
   localement dans `vendor/` avec sa licence BSD. Le jeu est chargé uniquement
   lorsque sa page est ouverte.
-- `assets/cv-kevidu-kussiyage.pdf` : dernier CV français fourni.
+- `assets/cv-kevidu-kussiyage.pdf` : CV français corrigé à partir du dernier document fourni.
 - `assets/cv-kevidu-kussiyage-en.pdf` : traduction anglaise sur une page.
-- `scripts/generate_cv_en.py` : source reproductible du CV anglais.
+- `assets/cv-portrait.png` : portrait extrait du CV fourni pour les deux versions.
+- `scripts/generate_cv_fr.py` et `scripts/generate_cv_en.py` : sources reproductibles des deux CV.
 - `assets/` : images, vidéos et autres documents disponibles.
 - `pages/` : redirections des anciennes adresses vers les nouvelles études.
 

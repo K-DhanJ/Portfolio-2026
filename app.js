@@ -9,7 +9,7 @@ let language=['fr','en'].includes(params.get('lang'))?params.get('lang'):storedL
 window.portfolioLanguage=language;
 let projects=language==='en'?window.PORTFOLIO_EN:window.PORTFOLIO;
 const tr=(fr,en)=>language==='en'?en:fr;
-const cvHref=()=>tr('assets/cv-kevidu-kussiyage.pdf?v=2026-11','assets/cv-kevidu-kussiyage-en.pdf');
+const cvHref=()=>tr('assets/cv-kevidu-kussiyage.pdf?v=2026-11-corrected','assets/cv-kevidu-kussiyage-en.pdf?v=2026-11-corrected');
 function translateShell(){
   document.documentElement.lang=language;
   document.querySelector('meta[name=description]').content=tr('Kevidu Kussiyage — ingénierie, design et usages. Projets et explorations d’un double cursus ingénieur-designer.','Kevidu Kussiyage — engineering, design and user experiences. Projects from a dual engineering and design degree.');

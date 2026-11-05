@@ -1,15 +1,8 @@
-"""Build the English one-page CV from the supplied French PDF.
+"""Build the English one-page CV from the supplied facts and corrections."""
 
-The source PDF supplies the portrait and facts. Project descriptions are
-translated, not expanded. Airbus is kept as a title until its duplicated
-French description is clarified by the CV owner.
-"""
-
-from io import BytesIO
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from pypdf import PdfReader
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
@@ -22,7 +15,7 @@ from reportlab.platypus import Paragraph
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "assets" / "cv-kevidu-kussiyage.pdf"
+PORTRAIT = ROOT / "assets" / "cv-portrait.png"
 OUTPUT = ROOT / "assets" / "cv-kevidu-kussiyage-en.pdf"
 
 pdfmetrics.registerFont(TTFont("Arial", r"C:\Windows\Fonts\arial.ttf"))
@@ -96,9 +89,8 @@ def side_section(name, top, lines):
     return top - 18
 
 
-# Reuse the exact portrait embedded in the supplied CV.
-portrait = PdfReader(str(SOURCE)).pages[0].images[0]
-photo = ImageReader(BytesIO(portrait.data))
+# Reuse the exact portrait extracted from the supplied CV.
+photo = ImageReader(str(PORTRAIT))
 cv.saveState()
 photo_x, photo_y, photo_w, photo_h = 18, PAGE_H - 173, 149, 112
 clip = cv.beginPath()
@@ -113,7 +105,7 @@ left_top = paragraph("KUSSIYAGE D. Kevidu", 24, left_top, SIDEBAR_W - 40,
 left_top = paragraph("Global Designer<br/>&amp; Computer Engineer", 24, left_top,
                      SIDEBAR_W - 40, size=18, leading=22, color=WHITE, bold=True) - 51
 contact_label_top = left_top
-left_top = side_section("Contact", left_top, ["kkussiyage@yahoo.fr", "Paris, France"])
+left_top = side_section("Contact", left_top, ["kevidudk@yahoo.com", "Paris, France"])
 portfolio_label_top = left_top
 left_top = side_section("Portfolio", left_top,
                          ["k-dhanj.github.io/Portfolio-2026/"])
@@ -129,7 +121,7 @@ left_top = side_section("Design skills", left_top,
 left_top = side_section("Interests", left_top,
                          ["Boxing · Cooking", "Hiking · Cinema · Drawing"])
 assert left_top > 25, f"Sidebar overflow: {left_top}"
-cv.linkURL("mailto:kkussiyage@yahoo.fr", (24, contact_label_top - 27, 170, contact_label_top - 15), relative=0)
+cv.linkURL("mailto:kevidudk@yahoo.com", (24, contact_label_top - 27, 170, contact_label_top - 15), relative=0)
 cv.linkURL("https://k-dhanj.github.io/Portfolio-2026/?lang=en#work",
            (24, portfolio_label_top - 27, 170, portfolio_label_top - 15), relative=0)
 
@@ -156,7 +148,10 @@ top = entry("British Council, Paris", "2010-2016",
             "CAE courses · FCE certification", top)
 
 top = section("Relevant experience and projects", top)
-top = entry("Airbus Atlantique · Service design and decision support", "2026", "", top)
+top = entry("Airbus Atlantic · R&T, EMiSys team", "2026",
+            "Studied how digital disconnection could protect employees' attention and health. "
+            "Analysed the Méaulte site and proposed ways to maintain production during "
+            "energy and information disruptions.", top)
 top = entry("INRAE · Service design and decision support", "2025",
             "Interviews and analysis of barriers to adopting digital tools in agriculture. "
             "Designed an intuitive platform to clarify information and support technology choices.", top)
