@@ -40,7 +40,7 @@ root <= status
 controls = html.DIV(Class='directions', role='group')
 controls.attrs['aria-label'] = t('Déplacements', 'Movement controls')
 for direction, symbol, label in [('up', '↑', t('Haut', 'Up')), ('left', '←', t('Gauche', 'Left')), ('down', '↓', t('Bas', 'Down')), ('right', '→', t('Droite', 'Right'))]:
-    button = html.BUTTON(symbol, type='button', Class='direction ' + direction)
+    button = html.BUTTON(symbol + '\ufe0e', type='button', Class='direction ' + direction)
     button.attrs['aria-label'] = t('Déplacer vers ', 'Move ') + label.lower()
     button.bind('click', lambda event, d=direction: play(d))
     controls <= button

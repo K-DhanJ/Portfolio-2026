@@ -9,11 +9,13 @@ let language=['fr','en'].includes(params.get('lang'))?params.get('lang'):storedL
 window.portfolioLanguage=language;
 let projects=language==='en'?window.PORTFOLIO_EN:window.PORTFOLIO;
 const tr=(fr,en)=>language==='en'?en:fr;
+// Force la présentation typographique des flèches sur les systèmes mobiles.
+const textArrows=value=>value.replace(/[\u2190-\u2199]/g,arrow=>arrow+'\uFE0E');
 const cvHref=()=>tr('assets/cv-kevidu-kussiyage.pdf?v=2026-11-corrected','assets/cv-kevidu-kussiyage-en.pdf?v=2026-11-corrected');
 function translateShell(){
   document.documentElement.lang=language;
   document.querySelector('meta[name=description]').content=tr('Kevidu Kussiyage — ingénierie, design et usages. Projets et explorations d’un double cursus ingénieur-designer.','Kevidu Kussiyage — engineering, design and user experiences. Projects from a dual engineering and design degree.');
-  document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=messages[el.dataset.i18n][language==='en'?1:0];});
+  document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=textArrows(messages[el.dataset.i18n][language==='en'?1:0]);});
   document.querySelectorAll('[data-i18n-aria]').forEach(el=>{el.setAttribute('aria-label',messages[el.dataset.i18nAria][language==='en'?1:0]);});
   document.querySelectorAll('[data-cv]').forEach(el=>{el.href=cvHref();});
   document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===language)));
@@ -29,7 +31,7 @@ translateShell();
 const main = document.querySelector('main');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = matchMedia('(pointer:fine)');
-function node(tag, className, text) { const el=document.createElement(tag); if(className) el.className=className; if(text) el.textContent=text; return el; }
+function node(tag, className, text) { const el=document.createElement(tag); if(className) el.className=className; if(text) el.textContent=textArrows(text); return el; }
 function link(text,href,className='') { const a=node('a',className,text); a.href=href; return a; }
 function image(src,alt) { const img=node('img'); img.src=src; img.alt=alt; img.loading='lazy'; img.decoding='async'; return img; }
 function heading(text,level=2) { return node('h'+level,'',text); }
