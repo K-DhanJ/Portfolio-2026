@@ -54,7 +54,7 @@ function work(view) {
   const grid=node('section','projects'); grid.setAttribute('aria-label',tr('Études de cas','Case studies'));
   const tones=['#45524f','#e1d7bc','#949e88','#bfc4d4','#c7b6db'];
   // Les illustrations de l'accueil sont indépendantes des visuels des études de cas.
-  const homeThumbnails={renault:'assets/projects/home-renault.jpg',inrae:'assets/projects/home-inrae.jpg','epopee-temporelle':'assets/projects/home-epopee-temporelle.jpg','manuel-numerique':'assets/compagnons/compagnons.webp',numix:'assets/projects/home-numix.jpg'};
+  const homeThumbnails={renault:'assets/projects/home-renault-2026.jpg',inrae:'assets/projects/home-inrae-2026.jpg','epopee-temporelle':'assets/projects/home-epopee-temporelle.jpg','manuel-numerique':'assets/projects/home-manuel-numerique-2026.jpg',numix:'assets/projects/home-numix-2026.jpg'};
   projects.slice(0,5).forEach((p,i)=>{
     const card=link('',`#project/${p.id}`,'project-card reveal'); card.style.setProperty('--tone',tones[i]);
     const head=node('div','card-head'); head.append(heading(p.title,3),node('span','arrow','↗'));
