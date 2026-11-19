@@ -458,39 +458,213 @@ window.PORTFOLIO = [
     ]
   },
   {
-    "id": "mgp",
-    "title": "Métropole du Grand Paris",
-    "category": "Service public & données",
-    "summary": "Faciliter la récolte de données lors des Nuits de la Solidarité.",
-    "cover": "assets/projects/mgp.jpg",
+    "id": "manuel-numerique",
+    "title": "Manuel numérique",
+    "category": "Design pédagogique & interaction",
+    "summary": "Repenser le manuel scolaire numérique avec des compagnons pédagogiques et une manette multisensorielle.",
+    "cover": "assets/compagnons/compagnons.webp",
     "blocks": [
       {
         "type": "text",
-        "text": "La Nuit de la Solidarité est une initiative de recensement des sans-abri pour mieux adapter les actions sociales et renforcer l’aide apportée"
+        "text": "Comment accompagner l’élève dans un environnement d’apprentissage plus bienveillant ? Ce projet collectif, intitulé « Manuels scolaires numériques » dans la présentation, propose Comp-AI-gnons : un site pédagogique, quatre personnages aux approches complémentaires et une manette multisensorielle. Réalisé avec Gaspard Bayle et Alexandre Vo Thanh."
       },
       {
         "type": "heading",
-        "text": "Problématique :"
+        "text": "Ma contribution : idéation, modélisation et visuels"
       },
       {
         "type": "text",
-        "text": "Comment faciliter la récolte de donnée lors des nuits de la solidarité"
+        "text": "J’ai participé à l’idéation du concept, à la modélisation et à la visualisation du projet. L’enquête, les choix de conception et les essais présentés dans le dossier relèvent du travail collectif."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/recherche-terrain.webp",
+        "alt": "Diapositive présentant la démarche d’étude terrain : observations, entretiens et POC",
+        "caption": "La démarche du groupe : observer les usages avant de définir la solution."
       },
       {
         "type": "heading",
-        "text": "Approche :"
+        "text": "Comprendre les usages au lycée"
       },
       {
         "type": "text",
-        "text": "Faciliter l'approche solidaire à l'aide du numérique"
+        "text": "Observations, entretiens et recherche documentaire ont nourri l’étude des habitudes liées aux manuels papier et numériques. Les profils construits à partir des entretiens font apparaître des besoins différents : être rassuré, retrouver de la motivation ou approfondir ses connaissances. Le projet s’appuie sur une approche du care pour placer l’attention portée à l’élève au centre de la conception."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/question-depart.webp",
+        "alt": "Diapositive posant la question : comment créer un espace bienveillant pour l’épanouissement scolaire ?",
+        "caption": "La question qui oriente la recherche."
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {
+            "src": "assets/compagnons/care-multisensoriel.webp",
+            "alt": "Diapositive sur l’apprentissage multisensoriel",
+            "caption": "Explorer plusieurs façons d’apprendre."
+          },
+          {
+            "src": "assets/compagnons/care-accessibilite.webp",
+            "alt": "Diapositive sur l’accessibilité des contenus",
+            "caption": "Prendre en compte les besoins spécifiques."
+          },
+          {
+            "src": "assets/compagnons/care-stress.webp",
+            "alt": "Diapositive sur la réduction du stress",
+            "caption": "Créer une expérience plus rassurante."
+          },
+          {
+            "src": "assets/compagnons/care-ludique.webp",
+            "alt": "Diapositive sur l’apprentissage ludique",
+            "caption": "Soutenir l’engagement par l’interaction."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/objectifs-experience.webp",
+        "alt": "Diapositive résumant les intentions de l’expérience : bien-être, interactions sonores et gestuelles, nouvelle posture d’apprentissage",
+        "caption": "Des intentions de design issues de l’étude, à vérifier auprès des élèves."
       },
       {
         "type": "text",
-        "text": "Notre étude a comparé les méthodes papier et numériques pour la collecte de données sur les sans-abri à Paris. À travers des interviews de personnes sans-abri, ainsi que de bénévoles, nous avons identifié plusieurs défis : encombrement du matériel, perte d’outils, difficultés de localisation, barrière de la langue et obstacles à l’expression des ressentis personnels. L’analyse de ces échanges a révélé la nécessité d’une collecte plus rapide et organisée, d’une réduction de la charge matérielle pour les bénévoles et d’une meilleure prise en compte des témoignages des sans-abri"
+        "text": "Un premier POC a utilisé une affiche et un QR code pour observer l’intérêt suscité par le concept. La présentation rapporte 55 scans provenant du lycée La Fontaine, de la médiathèque Landowski et de Léonard de Vinci. Il s’agit d’un indicateur d’intérêt, sans mesure d’efficacité pédagogique."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/poc.webp",
+        "alt": "Affiche du POC avec QR code et présentation des lieux de diffusion",
+        "caption": "Une première mise à l’épreuve du concept pour observer l’intérêt du public."
       },
       {
         "type": "heading",
-        "text": "L'App'Proche"
+        "text": "Quatre façons d’accompagner l’élève"
+      },
+      {
+        "type": "text",
+        "text": "Le concept propose quatre compagnons : l’animateur transforme l’apprentissage en jeu ; le mentor apporte des explications et du contexte ; le complice encourage par des défis ; le calme privilégie une approche rassurante. Ces personnalités explorent différentes manières de rendre le contenu scolaire plus engageant, sans imposer une seule posture d’apprentissage."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/objectifs-projet.webp",
+        "alt": "Carte des objectifs du projet : care, épanouissement scolaire et compagnons",
+        "caption": "Les compagnons apparaissent dans la synthèse des objectifs du groupe."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/compagnons.webp",
+        "alt": "Les quatre personnages du concept Comp-AI-gnons : lézard, tortue, panda et singe",
+        "caption": "Des compagnons aux personnalités complémentaires, imaginés pour accompagner différents besoins."
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {
+            "src": "assets/compagnons/animateur.webp",
+            "alt": "Diapositive présentant le compagnon animateur",
+            "caption": "L’animateur : jeu, humour et défis."
+          },
+          {
+            "src": "assets/compagnons/mentor.webp",
+            "alt": "Diapositive présentant le compagnon mentor",
+            "caption": "Le mentor : explications et contexte."
+          },
+          {
+            "src": "assets/compagnons/complice.webp",
+            "alt": "Diapositive présentant le compagnon complice",
+            "caption": "Le complice : encouragements et récompenses."
+          },
+          {
+            "src": "assets/compagnons/calme.webp",
+            "alt": "Diapositive présentant le compagnon calme",
+            "caption": "Le calme : une approche rassurante."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Un site pour relier contenus & expérience"
+      },
+      {
+        "type": "text",
+        "text": "Le site web constitue le support numérique du projet. Les partis pris explorés associent compagnons, mini-défis, retours immédiats et progression visible. L’objectif est de donner des repères à l’élève et de rompre avec la simple transposition d’un manuel papier à l’écran. Le scénario d’usage relie cette expérience numérique à une manette interactive."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/principes-interaction.webp",
+        "alt": "Diapositive décrivant les pistes de gamification, de retour immédiat et de progression visible",
+        "caption": "Principes imaginés pour le site : défis, retours et progression."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/scenario.webp",
+        "alt": "Storyboard illustrant le parcours d’un élève entre la classe et l’apprentissage accompagné",
+        "caption": "Scénario d’usage : replacer l’expérience proposée dans le quotidien de l’élève."
+      },
+      {
+        "type": "heading",
+        "text": "Une manette multisensorielle"
+      },
+      {
+        "type": "text",
+        "text": "L’exploration produit passe par des croquis, puis des modélisations et rendus sous Blender. La manette imaginée réunit des touches, un joystick, des lumières et un coussinet haptique. Les retours lumineux, sonores et vibratoires sont pensés pour guider, encourager ou apaiser selon le compagnon choisi. Ces interactions constituent des intentions de conception ; la présentation ne documente pas leur validation sur un dispositif matériel fonctionnel."
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {
+            "src": "assets/compagnons/variantes-visuelles.webp",
+            "alt": "Diapositive de recherche visuelle de personnages et de styles",
+            "caption": "Variantes visuelles explorées."
+          },
+          {
+            "src": "assets/compagnons/modelisation-blender.webp",
+            "alt": "Diapositive de modélisation 3D sous Blender",
+            "caption": "Passage du croquis au volume."
+          }
+        ]
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {
+            "src": "assets/compagnons/croquis-compagnons.webp",
+            "alt": "Croquis exploratoires des quatre compagnons",
+            "caption": "Recherche des personnages."
+          },
+          {
+            "src": "assets/compagnons/croquis-manette.webp",
+            "alt": "Croquis de différentes formes de manettes",
+            "caption": "Exploration de la forme et de la prise en main."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/interactions-manette.webp",
+        "alt": "Deux vues 3D de la manette avec touches, joystick, lumières et coussinet haptique légendés",
+        "caption": "Rendus 3D et répartition des interactions envisagées."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/retours-sensoriels.webp",
+        "alt": "Diapositive décrivant les effets de lumière, vibration et son imaginés pour chaque compagnon",
+        "caption": "Un langage sensoriel distinct imaginé pour chaque compagnon."
+      },
+      {
+        "type": "heading",
+        "text": "Mise à l’essai & enseignements"
+      },
+      {
+        "type": "text",
+        "text": "La présentation documente une séance de test utilisateur, sans détailler son protocole ni ses résultats. Le projet donne forme à une piste d’apprentissage associant interface, personnages et objet. Les effets recherchés sur la motivation, le stress et l’accessibilité restent des hypothèses à évaluer auprès des élèves."
+      },
+      {
+        "type": "image",
+        "src": "assets/compagnons/test-utilisateur.webp",
+        "alt": "Photographies de la séance de test utilisateur devant un ordinateur",
+        "caption": "Séance de mise à l’essai présentée dans le dossier du projet."
       }
     ]
   },

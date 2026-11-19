@@ -39,6 +39,13 @@ personnes interrogées. Les liens Recnorec et Comp-AI-gnons redirigent vers le
 nouveau projet. Les diapositives suivent l’enquête, le concept, la scénographie
 et le parcours proposé ; elles s’agrandissent au clic.
 
+Le « Manuel numérique » remplace la Métropole du Grand Paris dans la sélection.
+Ses visuels optimisés dans `assets/compagnons/` proviennent du dossier collectif
+« Projet lycée.pdf » : recherche, concept Comp-AI-gnons, personnages, modélisation
+de la manette et séance d’essai. Le PDF complet n’est pas publié car sa dernière
+diapositive contient des coordonnées personnelles. L’ancienne URL MGP redirige
+vers cette nouvelle étude de cas.
+
 ## Aperçu local
 
 Lancer `python -m http.server 4175` dans ce dossier puis ouvrir

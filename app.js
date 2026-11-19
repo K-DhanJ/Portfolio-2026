@@ -54,7 +54,7 @@ function work(view) {
   const grid=node('section','projects'); grid.setAttribute('aria-label',tr('Études de cas','Case studies'));
   const tones=['#45524f','#e1d7bc','#949e88','#bfc4d4','#c7b6db'];
   // Les illustrations de l'accueil sont indépendantes des visuels des études de cas.
-  const homeThumbnails={renault:'assets/projects/home-renault.jpg',inrae:'assets/projects/home-inrae.jpg','epopee-temporelle':'assets/projects/home-epopee-temporelle.jpg',mgp:'assets/projects/home-mgp.jpg',numix:'assets/projects/home-numix.jpg'};
+  const homeThumbnails={renault:'assets/projects/home-renault.jpg',inrae:'assets/projects/home-inrae.jpg','epopee-temporelle':'assets/projects/home-epopee-temporelle.jpg','manuel-numerique':'assets/compagnons/compagnons.webp',numix:'assets/projects/home-numix.jpg'};
   projects.slice(0,5).forEach((p,i)=>{
     const card=link('',`#project/${p.id}`,'project-card reveal'); card.style.setProperty('--tone',tones[i]);
     const head=node('div','card-head'); head.append(heading(p.title,3),node('span','arrow','↗'));
@@ -70,7 +70,7 @@ function work(view) {
 function info(view) {
   view.append(node('p','label',tr('Profil','About')),heading(tr('Entre ingénierie, design et usages.','Where engineering meets design and people.'),1)); view.lastChild.className='info-title';
   const panel=node('section','profile-panel'); panel.append(heading('Kevidu Kussiyage'),node('p','',tr('Après six années dans un double cursus ingénieur·designer, je cherche un stage de six mois en ingénierie, design ou conception hybride.','After six years in a dual engineering and design programme, I am seeking a six-month internship in engineering, design or a role combining both.')));
-  panel.append(node('p','',tr('Mes projets explorent les interactions automobiles, l’adoption du numérique en agriculture, la mise en valeur du patrimoine, la collecte de données et les expériences immersives.','My projects explore automotive interaction, digital tools in agriculture, cultural heritage, data collection and immersive experiences.')));
+  panel.append(node('p','',tr('Mes projets explorent les interactions automobiles, l’adoption du numérique en agriculture, la mise en valeur du patrimoine, les outils pédagogiques et les expériences immersives.','My projects explore automotive interaction, digital tools in agriculture, cultural heritage, educational tools and immersive experiences.')));
   const columns=node('div','profile-columns'); const a=node('div'); a.append(node('p','label',tr('Pratique du design','Design practice')),node('p','',tr('Graphisme · Matière · Sculpture · Croquis · Animation · Modélisation 3D','Graphic design · Materials · Sculpture · Sketching · Animation · 3D modelling')));
   const b=node('div'); b.append(node('p','label',tr('Pratique informatique','Computing practice')),node('p','','C · HTML / CSS / JavaScript · Python · Java · SQL · Unix')); columns.append(a,b);panel.append(columns);view.append(panel,contacts());
 }
@@ -113,6 +113,8 @@ function render(preserveScroll=false){
   const hash=decodeURIComponent(location.hash.slice(1)||'work');
   // Les liens déjà partagés vers PetApp ouvrent le projet qui le remplace.
   if(hash==='project/petapp'){location.replace('#project/surveillance');return;}
+  // L'ancienne adresse de la Métropole conduit au projet qui occupe sa place.
+  if(hash==='project/mgp'){location.replace('#project/manuel-numerique');return;}
   // Les liens vers les deux anciennes études de cas ouvrent désormais le projet de Maubuisson.
   if(hash==='project/recnorec'||hash==='project/compagnons'){location.replace('#project/epopee-temporelle');return;}
   if(hash==='selected'||hash==='main'||hash.startsWith('section-'))return;
