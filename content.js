@@ -1141,9 +1141,38 @@ window.PORTFOLIO = [
     "id": "ia",
     "title": "Intelligence artificielle",
     "category": "Informatique",
-    "summary": "",
-    "cover": null,
-    "blocks": []
+    "summary": "Apprendre à reconnaître des chiffres avec un perceptron, puis comprendre ses limites face au bruit.",
+    "cover": "assets/ia/perceptron-cover.svg",
+    "blocks": [
+      { "type": "text", "text": "Ce projet de cours explore un modèle d’intelligence artificielle simple : le perceptron. À partir de petits dessins de chiffres, il suit l’apprentissage d’une distinction entre 0 et 1, compare deux règles de correction, puis étend la méthode aux dix chiffres. Les courbes proviennent du rapport réalisé en 2025–2026." },
+      { "type": "heading", "text": "L’objectif : lire un chiffre pixel par pixel" },
+      { "type": "text", "text": "Chaque chiffre est représenté par une grille binaire de 6 × 8 cases : une case allumée vaut 1, une case éteinte vaut 0. Ces 48 valeurs deviennent les entrées du modèle. La première tâche consiste à séparer deux motifs connus, 0 et 1 ; la dernière à choisir parmi les chiffres de 0 à 9." },
+      { "type": "heading", "text": "Le principe du perceptron" },
+      { "type": "text", "text": "Le modèle donne un poids à chaque case, additionne les valeurs pondérées et produit une réponse. Pour la classification binaire, cette somme est comparée à un seuil fixé à 0,5. Comme la bonne réponse est connue pendant l’entraînement, l’écart entre réponse obtenue et réponse attendue sert à modifier les poids. Le calcul est répété jusqu’à réduire l’erreur sur les exemples d’apprentissage." },
+      { "type": "flow", "items": [
+        { "title": "Encoder", "text": "Transformer le dessin en 48 valeurs, 0 ou 1." },
+        { "title": "Prédire", "text": "Combiner les pixels avec les poids pour obtenir une sortie." },
+        { "title": "Corriger", "text": "Comparer cette sortie à la réponse connue et ajuster les poids." },
+        { "title": "Évaluer", "text": "Suivre l’erreur et tester le comportement avec des motifs bruités." }
+      ] },
+      { "type": "heading", "text": "1 — Distinguer 0 et 1" },
+      { "type": "text", "text": "Le premier essai alterne des exemples des deux classes. À chaque erreur, les poids sont corrigés selon W ← W + η × (erreur × X), où X désigne les pixels d’entrée et η le pas d’apprentissage. Dans les deux exécutions montrées, l’erreur d’entraînement atteint zéro après 7 et 9 itérations. Mais les essais avec du bruit montrent qu’apprendre les motifs de départ ne suffit pas à reconnaître de façon fiable leurs variantes." },
+      { "type": "image", "src": "assets/ia/apprentissage-binaire.png", "alt": "Deux courbes d’apprentissage du perceptron binaire atteignent zéro erreur sur les exemples d’entraînement", "caption": "Deux exécutions sur les motifs de départ : l’erreur d’entraînement atteint zéro." },
+      { "type": "image", "src": "assets/ia/bruit-binaire.png", "alt": "Erreur moyenne par classe du perceptron binaire selon le pourcentage de bruit ajouté aux motifs", "caption": "Quand les pixels changent, l’erreur moyenne reste élevée : le modèle généralise mal au-delà des motifs appris." },
+      { "type": "heading", "text": "2 — Corriger avec la règle de Widrow–Hoff" },
+      { "type": "text", "text": "La deuxième expérience ajuste les poids à partir d’une erreur continue, au lieu de ne retenir qu’une réponse juste ou fausse. Avec un pas d’apprentissage de 0,01 et un arrêt lorsque l’erreur totale passe sous 0,01, le rapport observe une convergence autour de 65 itérations selon l’initialisation. La courbe descend plus progressivement ; l’erreur augmente néanmoins lorsque l’on ajoute du bruit, surtout pour la classe 1 dans cet essai." },
+      { "type": "image", "src": "assets/ia/apprentissage-widrow-hoff.png", "alt": "Courbe d’erreur décroissante pendant l’apprentissage avec la règle de Widrow–Hoff", "caption": "La règle de Widrow–Hoff réduit progressivement l’erreur mesurée pendant l’entraînement." },
+      { "type": "image", "src": "assets/ia/bruit-widrow-hoff.png", "alt": "Erreur moyenne des classes 0 et 1 selon le bruit avec la règle de Widrow–Hoff", "caption": "Le bruit dégrade encore les résultats ; la classe 1 est particulièrement touchée dans les mesures du rapport." },
+      { "type": "heading", "text": "3 — Passer de deux à dix chiffres" },
+      { "type": "text", "text": "La dernière expérience utilise dix sorties, une par chiffre de 0 à 9, avec les mêmes 48 entrées binaires. Un motif est tiré au hasard à chaque itération ; les poids des sorties sont ajustés en fonction des réponses attendues. L’erreur totale diminue sur environ 1 600 itérations, mais certains chiffres restent plus difficiles à distinguer : le rapport signale notamment la proximité visuelle de 8 et 9." },
+      { "type": "image", "src": "assets/ia/apprentissage-dix-chiffres.png", "alt": "Courbe de l’erreur totale pendant l’entraînement du perceptron à dix sorties", "caption": "L’erreur totale d’apprentissage baisse au fil des itérations, puis se stabilise." },
+      { "type": "image", "src": "assets/ia/erreur-par-chiffre.png", "alt": "Courbes d’erreur d’apprentissage pour chacun des chiffres de zéro à neuf", "caption": "Le suivi chiffre par chiffre révèle des vitesses d’apprentissage différentes." },
+      { "type": "heading", "text": "Ce que montrent réellement les résultats" },
+      { "type": "text", "text": "Ces graphes mesurent l’erreur des expériences décrites, principalement pendant l’apprentissage. Ils ne donnent pas un taux de réussite vérifié sur un jeu d’images nouvelles. Le test avec du bruit montre au contraire une limite importante : un perceptron linéaire peut apprendre les motifs fournis sans reconnaître toutes leurs variations. Pour juger sa robustesse, il faudrait ensuite mesurer ses prédictions sur des chiffres variés qu’il n’a jamais vus." },
+      { "type": "heading", "text": "Consulter le travail d’origine" },
+      { "type": "text", "text": "Les six graphiques ci-dessus sont extraits du rapport de cours « Intelligence artificielle » (CY Tech, 2025–2026). Le document détaille les trois expériences, leurs paramètres et l’interprétation des courbes." },
+      { "type": "link", "text": "Lire le rapport complet ↗", "href": "assets/ia/rapport-perceptron.pdf" }
+    ]
   },
   {
     "id": "database",
