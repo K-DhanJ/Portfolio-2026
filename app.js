@@ -113,6 +113,8 @@ function render(preserveScroll=false){
   const hash=decodeURIComponent(location.hash.slice(1)||'work');
   // Les liens déjà partagés vers PetApp ouvrent le projet qui le remplace.
   if(hash==='project/petapp'){location.replace('#project/surveillance');return;}
+  // L'ancienne étude Unix conduit au robot Arduino qui occupe sa place.
+  if(hash==='project/unix'){location.replace('#project/arduino');return;}
   // L'ancienne adresse de la Métropole conduit au projet qui occupe sa place.
   if(hash==='project/mgp'){location.replace('#project/manuel-numerique');return;}
   // Les liens vers les deux anciennes études de cas ouvrent désormais le projet de Maubuisson.

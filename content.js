@@ -1244,64 +1244,39 @@ window.PORTFOLIO = [
     ]
   },
   {
-    "id": "unix",
-    "title": "Unix",
+    "id": "arduino",
+    "title": "Robot suiveur de lumière",
     "category": "Informatique",
-    "summary": "",
-    "cover": "assets/archive/pages/unix/pres/3.png",
+    "summary": "Un robot Arduino qui compare deux capteurs de lumière pour orienter son déplacement.",
+    "cover": "assets/arduino/robot-prototype.png",
     "blocks": [
-      {
-        "type": "text",
-        "text": "Parmi les principales difficultés rencontrées, l’optimisation des calculs et la gestion des ressources ont été des défis majeurs. Le traitement de grands nombres a nécessité des stratégies comme la mémorisation des séquences et l'utilisation de structures de données efficaces. La visualisation a également demandé plusieurs ajustements pour rendre les résultats lisibles et exploitables. Ce projet nous a permis de croiser algorithmique, analyse numérique et administration système. Bien que la conjecture de Collatz reste un mystère, notre approche a facilité son exploration et ouvert des pistes pour optimiser les calculs et approfondir l’étude de suites similaires"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/3.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/4.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/5.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/6.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/7.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/8.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/9.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/10.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/11.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/12.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/13.png"
-      },
-      {
-        "type": "image",
-        "src": "assets/archive/pages/unix/pres/14.png"
-      }
+      { "type": "text", "text": "Projet de robotique réalisé en 2025 avec Matthys Tachon-Panafieu, sous l’encadrement de Pierre Andry. Le défi : construire un petit robot qui repère de quel côté la lumière est la plus forte et oriente ses roues pour se diriger vers elle. En binôme, j’ai participé à l’ensemble des étapes : montage, calibration, programmation et essais. Le rapport documente aussi les difficultés rencontrées." },
+      { "type": "heading", "text": "L’objectif : transformer la lumière en mouvement" },
+      { "type": "text", "text": "Deux photorésistances placées sur le robot réagissent à l’éclairage. Une photorésistance change de résistance électrique quand la lumière varie ; l’Arduino Uno lit les deux signaux, les compare et commande deux servomoteurs à rotation continue. Si la lumière est plus intense à gauche, le robot doit tourner à gauche ; si elle l’est à droite, il doit tourner à droite." },
+      { "type": "heading", "text": "Du capteur à la roue" },
+      { "type": "text", "text": "Le prototype associe deux photorésistances et leurs résistances, une carte Arduino Uno, une plaque d’essai, deux servomoteurs, deux roues, un châssis et une alimentation portable. La carte assure à la fois la lecture des capteurs, le traitement des valeurs et l’envoi des commandes aux moteurs." },
+      { "type": "flow", "items": [
+        { "title": "Mesurer", "text": "Lire séparément la lumière reçue à gauche et à droite." },
+        { "title": "Calibrer", "text": "Rapprocher les deux mesures malgré leurs écarts de fabrication." },
+        { "title": "Décider", "text": "Comparer les valeurs avec une marge pour éviter de réagir au moindre écart." },
+        { "title": "Bouger", "text": "Commander les roues pour avancer, tourner ou s’arrêter." }
+      ] },
+      { "type": "image", "src": "assets/arduino/montage-capteurs.png", "alt": "Schéma du branchement des deux photorésistances et de leurs résistances à une carte Arduino Uno", "caption": "Le montage des deux capteurs de lumière sur la plaque d’essai reliée à l’Arduino." },
+      { "type": "heading", "text": "Calibrer deux capteurs qui ne lisent pas pareil" },
+      { "type": "text", "text": "Les premières lectures différaient même lorsque les capteurs recevaient un éclairage comparable. L’équipe a enregistré leurs valeurs avec un programme en C (recuperation.c), tracé les séries avec Gnuplot puis comparé dans Python des ajustements linéaire, quadratique et cubique. Une table de correspondance a aussi été essayée. Le rapport retient l’ajustement quadratique pour rapprocher la lecture du capteur droit de celle du capteur gauche." },
+      { "type": "image", "src": "assets/arduino/mesures-capteurs.png", "alt": "Courbes brutes des deux capteurs de lumière montrant un décalage entre leurs mesures", "caption": "Avant correction, les deux capteurs suivent les changements de lumière avec un décalage visible." },
+      { "type": "image", "src": "assets/arduino/ajustements-capteurs.png", "alt": "Comparaison des ajustements linéaire, quadratique et cubique entre les lectures des capteurs", "caption": "La comparaison des ajustements aide à choisir une correction de la lecture du capteur droit." },
+      { "type": "image", "src": "assets/arduino/courbes-calibrees.png", "alt": "Courbes des mesures après application des fonctions de calibration", "caption": "Après calibration, les courbes sont plus proches ; cela ne supprime pas tous les écarts ni le bruit." },
+      { "type": "heading", "text": "Calibrer les moteurs" },
+      { "type": "text", "text": "Un programme Arduino (testvitesse.ino) fait varier la consigne d’un servomoteur par pas de 5 pour repérer l’arrêt, l’accélération et le sens de rotation. Le tableau du rapport situe l’arrêt des deux roues autour de la valeur 91 plutôt qu’à la valeur théorique 90. Ces essais servent ensuite à définir les commandes pour avancer et tourner ; une rotation de 90° a été chronométrée à 1 025 ms sur ce montage." },
+      { "type": "image", "src": "assets/arduino/mesures-servomoteurs.png", "alt": "Tableau des consignes testées pour les deux servomoteurs et du temps mesuré pour tourner de 90 degrés", "caption": "Les consignes des deux roues sont adaptées à leur sens de rotation et à l’arrêt observé." },
+      { "type": "heading", "text": "Décider de la trajectoire" },
+      { "type": "text", "text": "Après calibration, le programme fait avancer le robot lorsque l’écart entre les deux capteurs reste inférieur à 10 dans les valeurs mesurées. Si le capteur gauche reçoit davantage de lumière, il commande un virage à gauche ; si le droit en reçoit davantage, un virage à droite. Si les conditions prévues ne sont pas réunies, il s’arrête. Cette marge évite de changer de direction à chaque petite oscillation des lectures." },
+      { "type": "heading", "text": "Ce que les essais ont montré" },
+      { "type": "text", "text": "Le rapport montre un prototype assemblé et une méthode de réglage documentée, mais relève des difficultés pour gérer les angles de rotation et la faible luminosité. Des seuils fixes deviennent moins adaptés lorsque l’éclairage change fortement. L’idée de seuils ajustables en temps réel est proposée comme amélioration future ; le rapport ne la présente pas comme une fonction déjà réalisée." },
+      { "type": "heading", "text": "Consulter le rapport" },
+      { "type": "text", "text": "Les schémas, la photo du prototype et les courbes ci-dessus proviennent du rapport Arduino rédigé par Kevidu Kussiyage et Matthys Tachon-Panafieu (2025)." },
+      { "type": "link", "text": "Lire le rapport complet ↗", "href": "assets/arduino/rapport-robot-lumiere.pdf" }
     ]
   }
 ];
